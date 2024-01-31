@@ -91,5 +91,6 @@ namespace EC
             this.NroTarjeta = _NroTarjeta;
             this.Activo = _activo;
         }
+        //Test
     }
 }
