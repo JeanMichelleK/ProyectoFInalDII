@@ -8,8 +8,6 @@ namespace EC
 {
     public class Aeropuerto
     {
-
-        //atr
         private string _codigoA;
         private string _nombre;
         private string _direccion;
@@ -28,6 +26,10 @@ namespace EC
 
             set
             {
+                if (value.Trim().Length != 3 && !value.All(char.IsLetter))
+                { 
+                    throw new Exception("El codigo debe ser estrictamente de 3 letras");
+                }
                 _codigoA = value;
             }
         }
@@ -41,6 +43,8 @@ namespace EC
 
             set
             {
+                if (value.Trim().Length <= 3)
+                { throw new Exception("El nombre debe tener al menos 3 letras"); }
                 _nombre = value;
             }
         }
@@ -55,6 +59,8 @@ namespace EC
 
             set
             {
+                if (value.Trim().Length <= 5)
+                { throw new Exception("Debe ingresar una direccion valida"); }
                 _direccion = value;
             }
         }
@@ -68,6 +74,8 @@ namespace EC
 
             set
             {
+                if (value <= 0)
+                { throw new Exception("El impuesto debe ser mayor a 0"); }
                 _impuestoSalida = value;
             }
         }
@@ -81,6 +89,8 @@ namespace EC
 
             set
             {
+                if (value <= 0)
+                { throw new Exception("El impuesto debe ser mayor a 0"); }
                 _impuestoLlegada = value;
             }
         }
@@ -94,6 +104,8 @@ namespace EC
 
             set
             {
+                if (value == null)
+                { throw new Exception("Se debe saber la ciudad"); }
                 _ciudad = value;
             }
         }
@@ -107,6 +119,8 @@ namespace EC
 
             set
             {
+                if (value == false)
+                { throw new Exception("El aeropuerto no esta activo"); }
                 _activo = value;
             }
         }
@@ -124,23 +138,6 @@ namespace EC
             this._impuestoLlegada = _impuestoLlegada;
             this._ciudad = _ciudad;
             this._activo = _activo;
-        }
-        public void Validar()
-        {
-            if (this.CodigoA.Trim().Length != 3 && !this.CodigoA.All(char.IsLetter))
-                throw new Exception("El codigo debe ser estrictamente de 3 letras");
-            if (this.Nombre.Trim().Length <= 3)
-                throw new Exception("El nombre debe tener al menos 3 letras");
-            if (this.Direccion.Trim().Length <= 5)
-                throw new Exception("Debe ingresar una direccion valida");
-            if (this.ImpuestoSalida <= 0)
-                throw new Exception("El impuesto debe ser mayor a 0");
-            if (this.ImpuestoLlegada <= 0)
-                throw new Exception("El impuesto debe ser mayor a 0");
-            if (this.Ciudad == null)
-                throw new Exception("Se debe saber la ciudad");
-            if (this.Activo == false)
-                throw new Exception("El aeropuerto no esta activo");
         }
     }
 }

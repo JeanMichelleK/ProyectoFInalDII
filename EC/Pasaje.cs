@@ -48,6 +48,8 @@ namespace EC
 
             set
             {
+                if (!(value > 0 && Asiento <= 300))
+                { throw new Exception("El asiento debe estar entre los rangos 1 y 300"); }
                 _asiento = value;
             }
         }
@@ -64,12 +66,6 @@ namespace EC
             this._nroPasaporte = _nroPasaporte;
             this._idVenta = _idVenta;
             this._asiento = _asiento;
-        }
-
-        public void Validar()
-        {
-            if (!(this.Asiento > 0 && Asiento <= 300))
-                throw new Exception("El asiento debe estar entre los rangos 1 y 300");
         }
     }
 }

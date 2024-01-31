@@ -11,7 +11,7 @@ namespace EC
         private string _codigoCiudad;
         private string _nombre;
         private string _pais;
-        private bool activo;
+        private bool _activo;
 
         [DisplayName("Codigo de la Ciudad")]
         public string CodigoCiudad
@@ -23,6 +23,8 @@ namespace EC
 
             set
             {
+                if (value.Trim().Length != 6 && !value.All(char.IsLetter))
+                { throw new Exception("El codigo debe ser estrictamente de 6 letras"); }
                 _codigoCiudad = value;
             }
         }
@@ -36,6 +38,8 @@ namespace EC
 
             set
             {
+                if (value.Trim().Length <= 3)
+                { throw new Exception("El nombre debe tener al menos 3 letras"); }
                 _nombre = value;
             }
         }
@@ -49,6 +53,8 @@ namespace EC
 
             set
             {
+                if (value.Trim().Length <= 4)
+                { throw new Exception("Debe ingresar un pais valido"); }
                 _pais = value;
             }
         }
@@ -57,12 +63,14 @@ namespace EC
         {
             get
             {
-                return activo;
+                return _activo;
             }
 
             set
             {
-                activo = value;
+                if (value == false)
+                    throw new Exception("El aeropuerto no esta activo");
+                _activo = value;
             }
         }
 
@@ -71,19 +79,7 @@ namespace EC
             this._codigoCiudad = _codigoCiudad;
             this._nombre = _nombre;
             this._pais = _pais;
-            this.activo = activo;
-        }
-
-        public void Validar()
-        {
-            if (this.CodigoCiudad.Trim().Length != 6 && !this.CodigoCiudad.All(char.IsLetter))
-                throw new Exception("El codigo debe ser estrictamente de 6 letras");
-            if (this.Nombre.Trim().Length <= 3)
-                throw new Exception("El nombre debe tener al menos 3 letras");
-            if (this.Pais.Trim().Length <= 5)
-                throw new Exception("Debe ingresar un pais valido");
-            if (this.Activo == false)
-                throw new Exception("El aeropuerto no esta activo");
+            this._activo = activo;
         }
     }
 }

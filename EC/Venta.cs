@@ -77,6 +77,8 @@ namespace EC
 
             set
             {
+                if (value < 0)
+                { throw new Exception("El monto no puede ser menor a 0"); }
                 _monto = value;
             }
         }
@@ -106,12 +108,6 @@ namespace EC
             this.FechaVenta = _fechaVenta;
             this.Monto = _monto;
             this.Usuario = _usuario;
-        }
-
-        public void Validar()
-        {
-            if (this.Monto < 0)
-                throw new Exception("El monto no puede ser menor a 0");
         }
     }
 }

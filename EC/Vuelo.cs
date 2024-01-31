@@ -40,6 +40,8 @@ namespace EC
 
             set
             {
+                if (value <= DateTime.Now)
+                { throw new Exception("La fecha y hora de salida debe ser en el futuro"); }
                 _fechaHoraSalida = value;
             }
         }
@@ -53,6 +55,8 @@ namespace EC
 
             set
             {
+                if (value < FechaHoraSalida)
+                { throw new Exception("El vuelo debe llegar en una fecha futura, los viajes al pasado todavia no existen"); }
                 _fechaHoraLlegada = value;
             }
         }
@@ -66,6 +70,9 @@ namespace EC
 
             set
             {
+                if (this.AeropuertoLlegada.Activo == false)
+                { throw new Exception("El aeropuerto no se encuentra disponible"); }
+                _aeropuertoPartida = value;
                 _aeropuertoLlegada = value;
             }
         }
@@ -79,6 +86,8 @@ namespace EC
 
             set
             {
+                if (this.AeropuertoPartida.Activo == false)
+                { throw new Exception("El aeropuerto no se encuentra disponible"); }
                 _aeropuertoPartida = value;
             }
         }
@@ -92,6 +101,8 @@ namespace EC
 
             set
             {
+                if (value > 0)
+                    throw new Exception("El precio no puede ser negativo");
                 _precio = value;
             }
         }
@@ -105,6 +116,8 @@ namespace EC
 
             set
             {
+                if (!(value >= 100 && value <= 300))
+                { throw new Exception("La cantidad de asientos debe estar entre los rangos 100 y 300"); }
                 _cantidadAsientos = value;
             }
         }
@@ -122,18 +135,6 @@ namespace EC
             this.AeropuertoPartida = _aeropuertoPartida;
             this.Precio = _precio;
             this.CantidadAsientos = _cantidadAsientos;
-        }
-
-        public void Validar()
-        {
-            if (this.Precio > 0)
-                throw new Exception("El precio no puede ser negativo");
-            if (!(this.CantidadAsientos >= 100 && this.CantidadAsientos <= 300))
-                throw new Exception("La cantidad de asientos debe estar entre los rangos 100 y 300");
-            if (this.FechaHoraSalida <= DateTime.Now)
-                throw new Exception("La fecha y hora de salida debe ser en el futuro");
-            if (this.FechaHoraLlegada < FechaHoraSalida)
-                throw new Exception("El vuelo debe llegar en una fecha futura, los viajes al pasado todavia no existen");
         }
     }
 }

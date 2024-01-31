@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -62,6 +61,12 @@ namespace EC
 
             set
             {
+                string[] rolesPermitidos = { "Gerente", "Vendedor", "Admin" };
+
+                if (value == null || !rolesPermitidos.Contains(value))
+                {
+                    throw new Exception("El valor de Labor debe ser 'Gerente', 'Vendedor' o 'Admin'.");
+                }
                 _labor = value;
             }
         }

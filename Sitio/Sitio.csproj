@@ -134,16 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Models\EC\Aeropuerto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\EC\Ciudad.cs" />
-    <Compile Include="Models\EC\Cliente.cs" />
-    <Compile Include="Models\EC\Empleado.cs" />
-    <Compile Include="Models\EC\Pasaje.cs" />
-    <Compile Include="Models\EC\Venta.cs" />
-    <Compile Include="Models\EC\Vuelo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,10 +155,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Models\EC\" />
     <Folder Include="Models\Persistencia\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EC\EC.csproj">
+      <Project>{d228ee8e-249d-4d42-a080-15a312b96b95}</Project>
+      <Name>EC</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
