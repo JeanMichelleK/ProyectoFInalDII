@@ -10,5 +10,6 @@ namespace Persistencia
     public interface IPersistenciaVenta
     {
         void Alta(Venta unaV);
+        //Ventas de un vuelo
     }
 }

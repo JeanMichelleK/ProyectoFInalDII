@@ -22,8 +22,6 @@ namespace EC
 
             set
             {
-                if (value.Trim().Length != 6 && !value.All(char.IsLetter))
-                { throw new Exception("El codigo debe ser estrictamente de 6 letras"); }
                 _codigoCiudad = value;
             }
         }
@@ -36,9 +34,7 @@ namespace EC
             }
 
             set
-            {
-                if (value.Trim().Length <= 3)
-                { throw new Exception("El nombre debe tener al menos 3 letras"); }
+            {             
                 _nombre = value;
             }
         }
@@ -52,19 +48,27 @@ namespace EC
 
             set
             {
-                if (value.Trim().Length <= 4)
-                { throw new Exception("Debe ingresar un pais valido"); }
                 _pais = value;
             }
         }
 
-
+        public Ciudad() { }
 
         public Ciudad(string _codigoCiudad, string _nombre, string _pais)
         {
-            this._codigoCiudad = _codigoCiudad;
-            this._nombre = _nombre;
-            this._pais = _pais;
+            CodigoCiudad = _codigoCiudad;
+            Nombre = _nombre;
+            Pais = _pais;
+        }
+
+        public void Validar()
+        {
+            if (this.CodigoCiudad.Trim().Length != 6 && !this.CodigoCiudad.Trim().All(char.IsLetter))
+             throw new Exception("El codigo debe ser estrictamente de 6 letras");
+            if (this.Nombre.Trim().Length <= 3)
+             throw new Exception("El nombre debe tener al menos 3 letras");
+            if (this.Pais.Trim().Length <= 4)
+             throw new Exception("Debe ingresar un pais valido"); 
         }
     }
 }

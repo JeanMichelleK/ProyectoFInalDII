@@ -14,6 +14,7 @@ namespace EC
         private DateTime _fechaVenta;
         private double _monto;
         private Empleado _usuario;
+        private List<Pasaje> _ListaP;
 
         public int IdVenta
         {
@@ -89,6 +90,19 @@ namespace EC
             set
             {
                 _usuario = value;
+            }
+        }
+
+        public List<Pasaje> ListaP
+        {
+            get
+            {
+                return _ListaP;
+            }
+
+            set
+            {
+                _ListaP = value;
             }
         }
 

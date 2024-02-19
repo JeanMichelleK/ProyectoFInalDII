@@ -25,10 +25,6 @@ namespace EC
 
             set
             {
-                if (value.Trim().Length != 3 && !value.All(char.IsLetter))
-                { 
-                    throw new Exception("El codigo debe ser estrictamente de 3 letras");
-                }
                 _codigoA = value;
             }
         }
@@ -41,9 +37,7 @@ namespace EC
             }
 
             set
-            {
-                if (value.Trim().Length <= 3)
-                { throw new Exception("El nombre debe tener al menos 3 letras"); }
+            {  
                 _nombre = value;
             }
         }
@@ -57,9 +51,7 @@ namespace EC
             }
 
             set
-            {
-                if (value.Trim().Length <= 5)
-                { throw new Exception("Debe ingresar una direccion valida"); }
+            {              
                 _direccion = value;
             }
         }
@@ -72,9 +64,7 @@ namespace EC
             }
 
             set
-            {
-                if (value <= 0)
-                { throw new Exception("El impuesto debe ser mayor a 0"); }
+            {             
                 _impuestoSalida = value;
             }
         }
@@ -87,9 +77,7 @@ namespace EC
             }
 
             set
-            {
-                if (value <= 0)
-                { throw new Exception("El impuesto debe ser mayor a 0"); }
+            {             
                 _impuestoLlegada = value;
             }
         }
@@ -116,12 +104,31 @@ namespace EC
         }
         public Aeropuerto(string _codigoA, string _nombre, string _direccion, double _impuestoSalida, double _impuestoLlegada, Ciudad _ciudad)
         {
-            this._codigoA = _codigoA;
-            this._nombre = _nombre;
-            this._direccion = _direccion;
-            this._impuestoSalida = _impuestoSalida;
-            this._impuestoLlegada = _impuestoLlegada;
-            this._ciudad = _ciudad;
+            CodigoA = _codigoA;
+            Nombre = _nombre;
+            Direccion = _direccion;
+            ImpuestoSalida = _impuestoSalida;
+            ImpuestoLlegada = _impuestoLlegada;
+            Ciudad = _ciudad;
+        }
+
+        public void Validar()
+        {
+            if (this.CodigoA.Trim().Length != 3 && !this.CodigoA.All(char.IsLetter))
+                throw new Exception("El codigo debe ser estrictamente de 3 letras");
+            if (this.Nombre.Trim().Length <= 3)
+             throw new Exception("El nombre debe tener al menos 3 letras");
+            if (this.Direccion.Trim().Length <= 5)
+             throw new Exception("Debe ingresar una direccion valida");
+            if (this.ImpuestoSalida <= 0)
+             throw new Exception("El impuesto debe ser mayor a 0");
+            if (this.ImpuestoLlegada <= 0)
+             throw new Exception("El impuesto debe ser mayor a 0"); 
+
+
+
+
+
         }
     }
 }

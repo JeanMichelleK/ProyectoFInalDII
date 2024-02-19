@@ -52,7 +52,6 @@
     <Compile Include="ClasesTrabajo\PersistenciaCliente.cs" />
     <Compile Include="Interfaces\IPersistenciaVenta.cs" />
     <Compile Include="ClasesTrabajo\PersistenciaVenta.cs" />
-    <Compile Include="Interfaces\IPersistenciaPasaje.cs" />
     <Compile Include="ClasesTrabajo\PersistenciaPasaje.cs" />
     <Compile Include="Interfaces\IPersistenciaEmpleado.cs" />
     <Compile Include="ClasesTrabajo\PersistenciaEmpleado.cs" />

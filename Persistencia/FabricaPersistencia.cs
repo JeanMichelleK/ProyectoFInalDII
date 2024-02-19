@@ -28,10 +28,6 @@ namespace Persistencia
         {
             return (PersistenciaVenta.GetInstancia());
         }
-        public static IPersistenciaPasaje GetPersistenciaPasaje()
-        {
-            return (PersistenciaPasaje.GetInstancia());
-        }
         public static IPersistenciaEmpleado GetPersistenciaEmpleado()
         {
             return (PersistenciaEmpleado.GetInstancia());

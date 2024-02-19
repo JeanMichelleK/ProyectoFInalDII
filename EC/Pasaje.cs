@@ -9,7 +9,6 @@ namespace EC
     public class Pasaje
     {
         private Cliente _Cliente;
-        private Venta _Venta;
         private int _asiento;
 
         public Cliente Cliente
@@ -24,19 +23,6 @@ namespace EC
                 _Cliente = value;
             }
         }
-        public Venta Venta
-        {
-            get
-            {
-                return _Venta;
-            }
-
-            set
-            {
-                _Venta = value;
-            }
-        }
-
         public int Asiento
         {
             get
@@ -59,10 +45,9 @@ namespace EC
         }
 
 
-        public Pasaje(Cliente _nroPasaporte, Venta _idVenta, int _asiento)
+        public Pasaje(Cliente _nroPasaporte, int _asiento)
         {
             this._Cliente = _nroPasaporte;
-            this._Venta = _idVenta;
             this._asiento = _asiento;
         }
     }

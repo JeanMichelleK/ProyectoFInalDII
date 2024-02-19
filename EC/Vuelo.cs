@@ -72,7 +72,6 @@ namespace EC
             {
                 if (this.AeropuertoLlegada.Activo == false)
                 { throw new Exception("El aeropuerto no se encuentra disponible"); }
-                _aeropuertoPartida = value;
                 _aeropuertoLlegada = value;
             }
         }
@@ -101,7 +100,7 @@ namespace EC
 
             set
             {
-                if (value > 0)
+                if (value <= 0)
                     throw new Exception("El precio no puede ser negativo");
                 _precio = value;
             }

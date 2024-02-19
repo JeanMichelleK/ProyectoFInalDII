@@ -23,6 +23,7 @@ namespace Persistencia
         public void Alta(Aeropuerto unA)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            //Llamamos conexion la operacion 
             SqlCommand Comando = new SqlCommand("AltaAeropuerto", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@CodigoA", unA.CodigoA);
