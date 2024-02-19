@@ -12,7 +12,6 @@ namespace EC
         private string _nombre;
         private string _passCli;
         private string _NroTarjeta;
-        private bool _activo;
 
         public string NroPasaporte
         {
@@ -66,31 +65,17 @@ namespace EC
             }
         }
 
-        public bool Activo
-        {
-            get
-            {
-                return _activo;
-            }
-
-            set
-            {
-                _activo = value;
-            }
-        }
 
         public Cliente()
         {
 
         }
-        public Cliente(string _nroPasaporte, string _nombre, string _passCli, string _NroTarjeta, bool _activo)
+        public Cliente(string _nroPasaporte, string _nombre, string _passCli, string _NroTarjeta)
         {
             this.NroPasaporte = _nroPasaporte;
             this.Nombre = _nombre;
             this.PassCli = _passCli;
             this.NroTarjeta = _NroTarjeta;
-            this.Activo = _activo;
         }
-        //Test
     }
 }

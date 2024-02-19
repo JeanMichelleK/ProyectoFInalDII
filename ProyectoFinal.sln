@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitio", "Sitio\Sitio.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EC", "EC\EC.csproj", "{D228EE8E-249D-4D42-A080-15A312B96B95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{3E39C055-AE26-49D9-96D5-BB623B99A480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{1EE9099E-EAE6-4EC7-9456-114608BF2C04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{D228EE8E-249D-4D42-A080-15A312B96B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D228EE8E-249D-4D42-A080-15A312B96B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D228EE8E-249D-4D42-A080-15A312B96B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E39C055-AE26-49D9-96D5-BB623B99A480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E39C055-AE26-49D9-96D5-BB623B99A480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E39C055-AE26-49D9-96D5-BB623B99A480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E39C055-AE26-49D9-96D5-BB623B99A480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE9099E-EAE6-4EC7-9456-114608BF2C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE9099E-EAE6-4EC7-9456-114608BF2C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE9099E-EAE6-4EC7-9456-114608BF2C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE9099E-EAE6-4EC7-9456-114608BF2C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

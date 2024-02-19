@@ -14,7 +14,6 @@ namespace EC
         private double _impuestoSalida;
         private double _impuestoLlegada;
         private Ciudad _ciudad;
-        private bool _activo;
 
         [DisplayName("Codigo de Aeropuerto")]
         public string CodigoA
@@ -110,26 +109,12 @@ namespace EC
             }
         }
 
-        public bool Activo
-        {
-            get
-            {
-                return _activo;
-            }
-
-            set
-            {
-                if (value == false)
-                { throw new Exception("El aeropuerto no esta activo"); }
-                _activo = value;
-            }
-        }
 
         public Aeropuerto()
         {
 
         }
-        public Aeropuerto(string _codigoA, string _nombre, string _direccion, double _impuestoSalida, double _impuestoLlegada, Ciudad _ciudad, bool _activo)
+        public Aeropuerto(string _codigoA, string _nombre, string _direccion, double _impuestoSalida, double _impuestoLlegada, Ciudad _ciudad)
         {
             this._codigoA = _codigoA;
             this._nombre = _nombre;
@@ -137,7 +122,6 @@ namespace EC
             this._impuestoSalida = _impuestoSalida;
             this._impuestoLlegada = _impuestoLlegada;
             this._ciudad = _ciudad;
-            this._activo = _activo;
         }
     }
 }

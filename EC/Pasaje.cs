@@ -8,34 +8,32 @@ namespace EC
 {
     public class Pasaje
     {
-        private Cliente _nroPasaporte;
-        private Venta _idVenta;
+        private Cliente _Cliente;
+        private Venta _Venta;
         private int _asiento;
 
-        [DisplayName("Numero de pasaporte")]
-        public Cliente NroPasaporte
+        public Cliente Cliente
         {
             get
             {
-                return _nroPasaporte;
+                return _Cliente;
             }
 
             set
             {
-                _nroPasaporte = value;
+                _Cliente = value;
             }
         }
-        [DisplayName("Id de la venta")]
-        public Venta IdVenta
+        public Venta Venta
         {
             get
             {
-                return _idVenta;
+                return _Venta;
             }
 
             set
             {
-                _idVenta = value;
+                _Venta = value;
             }
         }
 
@@ -61,10 +59,10 @@ namespace EC
         }
 
 
-        public Pasaje(Cliente _nroPasaporte, Venta _idVenta, int _asiento, List<Pasaje> _listaP)
+        public Pasaje(Cliente _nroPasaporte, Venta _idVenta, int _asiento)
         {
-            this._nroPasaporte = _nroPasaporte;
-            this._idVenta = _idVenta;
+            this._Cliente = _nroPasaporte;
+            this._Venta = _idVenta;
             this._asiento = _asiento;
         }
     }

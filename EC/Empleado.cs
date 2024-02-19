@@ -12,7 +12,6 @@ namespace EC
         string _nomCompleto;
         string _labor;
 
-        [Required(ErrorMessage = "Ingrese el usuario")]
         public string Usuario
         {
             get
@@ -25,7 +24,6 @@ namespace EC
                 _usuario = value;
             }
         }
-        [Required(ErrorMessage = "Ingrese la contraseña")]
         public string Contraseña
         {
             get
@@ -38,7 +36,6 @@ namespace EC
                 _contraseña = value;
             }
         }
-        [Required(ErrorMessage = "Ingrese nombre completo")]
         public string NomCompleto
         {
             get
@@ -51,7 +48,6 @@ namespace EC
                 _nomCompleto = value;
             }
         }
-        [Required(ErrorMessage = "Ingrese labor")]
         public string Labor
         {
             get

@@ -11,7 +11,6 @@ namespace EC
         private string _codigoCiudad;
         private string _nombre;
         private string _pais;
-        private bool _activo;
 
         [DisplayName("Codigo de la Ciudad")]
         public string CodigoCiudad
@@ -59,27 +58,13 @@ namespace EC
             }
         }
 
-        public bool Activo
-        {
-            get
-            {
-                return _activo;
-            }
 
-            set
-            {
-                if (value == false)
-                    throw new Exception("El aeropuerto no esta activo");
-                _activo = value;
-            }
-        }
 
-        public Ciudad(string _codigoCiudad, string _nombre, string _pais, bool activo)
+        public Ciudad(string _codigoCiudad, string _nombre, string _pais)
         {
             this._codigoCiudad = _codigoCiudad;
             this._nombre = _nombre;
             this._pais = _pais;
-            this._activo = activo;
         }
     }
 }

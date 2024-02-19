@@ -9,13 +9,12 @@ namespace EC
     public class Venta
     {
         private int _idVenta;
-        private Cliente _nroPasaporte;
-        private Vuelo _codigoVuelo;
+        private Cliente _Cliente;
+        private Vuelo _Vuelo;
         private DateTime _fechaVenta;
         private double _monto;
         private Empleado _usuario;
 
-        [DisplayName("Id de la venta")]
         public int IdVenta
         {
             get
@@ -28,33 +27,30 @@ namespace EC
                 _idVenta = value;
             }
         }
-        [DisplayName("Numero de pasaporte")]
-        public Cliente NroPasaporte
+        public Cliente Cliente
         {
             get
             {
-                return _nroPasaporte;
+                return _Cliente;
             }
 
             set
             {
-                _nroPasaporte = value;
+                _Cliente = value;
             }
         }
-        [DisplayName("Codigo del vuelo")]
-        public Vuelo CodigoVuelo
+        public Vuelo Vuelo
         {
             get
             {
-                return _codigoVuelo;
+                return _Vuelo;
             }
 
             set
             {
-                _codigoVuelo = value;
+                _Vuelo = value;
             }
         }
-        [DisplayName("Fecha de la venta")]
         public DateTime FechaVenta
         {
             get
@@ -100,11 +96,11 @@ namespace EC
 
 
 
-        public Venta(int _idVenta, Cliente _nroPasaporte, Vuelo _codigoVuelo, DateTime _fechaVenta, double _monto, Empleado _usuario)
+        public Venta(int _idVenta, Cliente _Cliente, Vuelo _Vuelo, DateTime _fechaVenta, double _monto, Empleado _usuario)
         {
             this.IdVenta = _idVenta;
-            this.NroPasaporte = _nroPasaporte;
-            this.CodigoVuelo = _codigoVuelo;
+            this.Cliente = _Cliente;
+            this.Vuelo = _Vuelo;
             this.FechaVenta = _fechaVenta;
             this.Monto = _monto;
             this.Usuario = _usuario;
