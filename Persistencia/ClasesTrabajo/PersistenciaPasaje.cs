@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Persistencia
 {
-    internal class PersistenciaPasaje : IPersistenciaPasaje
+    internal class PersistenciaPasaje 
     {
         private static PersistenciaPasaje _instancia = null;
         private PersistenciaPasaje() { }
@@ -20,9 +20,9 @@ namespace Persistencia
             return _instancia;
         }
 
-        public void Alta(Pasaje unP)
+        public void Alta(Pasaje unP, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("AltaPasaje", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unP.Cliente.NroPasaporte);
@@ -52,9 +52,9 @@ namespace Persistencia
                 _cnn.Close();
             }
         }
-        public List<Pasaje> ListarPasajes(int CodigoV)
+        public List<Pasaje> ListarPasajes(int CodigoV, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Pasaje unP = null;
             List<Pasaje> Lista = new List<Pasaje>();
             SqlCommand Comando = new SqlCommand("ListarPasajes", _cnn);

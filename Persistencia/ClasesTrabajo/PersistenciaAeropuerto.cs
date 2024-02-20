@@ -20,9 +20,9 @@ namespace Persistencia
             return _instancia;
         }
 
-        public void Alta(Aeropuerto unA)
+        public void Alta(Aeropuerto unA,Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             //Llamamos conexion la operacion 
             SqlCommand Comando = new SqlCommand("AltaAeropuerto", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
@@ -57,9 +57,9 @@ namespace Persistencia
             }
         }
 
-        public void Modificar(Aeropuerto unA)
+        public void Modificar(Aeropuerto unA, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("ModificarAeropuerto", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@CodigoA", unA.CodigoA);
@@ -93,9 +93,9 @@ namespace Persistencia
             }
         }
 
-        public void Baja(Aeropuerto unA)
+        public void Baja(Aeropuerto unA, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("BajaAeropuerto", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@CodigoA", unA.CodigoA);
@@ -122,9 +122,9 @@ namespace Persistencia
             }
         }
 
-        public Aeropuerto BuscarAeropuertoActivo(string pCodigo)
+        public Aeropuerto BuscarAeropuertoActivo(string pCodigo, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Aeropuerto unA = null;
             SqlCommand Comando = new SqlCommand("BuscarAeropuertoActivo", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
@@ -148,9 +148,9 @@ namespace Persistencia
             }
             return unA;
         }
-        internal Aeropuerto BuscarAeropuertoTodos(string pCodigo)
+        internal Aeropuerto BuscarAeropuertoTodos(string pCodigo, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Aeropuerto unA = null;
             SqlCommand Comando = new SqlCommand("BuscarAeropuerto", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;

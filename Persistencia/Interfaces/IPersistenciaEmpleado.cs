@@ -9,6 +9,6 @@ namespace Persistencia
 {
     public interface IPersistenciaEmpleado
     {
-        Empleado Buscar(string pUsu);
+        Empleado Buscar(string pUsu, Empleado pUsuario);
     }
 }

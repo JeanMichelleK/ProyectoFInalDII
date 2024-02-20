@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EC;
 
 namespace Persistencia
 {
     internal class Conexion
     {
-        private static string _cnn = "Data Source=.; Initial Catalog = ProyectoFinal; Integrated Security = true";
-
-        internal static string Cnn
+        internal static string Cnn(Empleado pUsu = null)
         {
-            get { return _cnn; }
+            if (pUsu == null)
+                return "Data Source =.; Initial Catalog = ProyectoFinal; Integrated Security = true";
+            else
+                return "Data Source =.; Initial Catalog = ProyectoFinal; User=" + pUsu.Usuario + "; Password='" + pUsu.Contraseña + "'";
         }
     }
 }

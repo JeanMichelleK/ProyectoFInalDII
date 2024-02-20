@@ -19,9 +19,9 @@ namespace Persistencia
                 _instancia = new PersistenciaVenta();
             return _instancia;
         }
-        public void Alta(Venta unaV)
+        public void Alta(Venta unaV, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("AltaVenta", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unaV.Cliente.NroPasaporte);

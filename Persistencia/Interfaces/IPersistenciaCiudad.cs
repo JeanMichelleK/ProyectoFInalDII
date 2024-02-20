@@ -9,12 +9,12 @@ namespace Persistencia
 {
     public interface IPersistenciaCiudad
     {
-        void Alta(Ciudad unaC);
+        void Alta(Ciudad unaC, Empleado pUsu);
 
-        void Modificar(Ciudad unaC);
+        void Modificar(Ciudad unaC, Empleado pUsu);
 
-        void Baja(Ciudad unaC);
+        void Baja(Ciudad unaC, Empleado pUsu);
 
-        Ciudad BuscarCiudadActiva(string pCodigo);
+        Ciudad BuscarCiudadActiva(string pCodigo, Empleado pUsu);
     }
 }

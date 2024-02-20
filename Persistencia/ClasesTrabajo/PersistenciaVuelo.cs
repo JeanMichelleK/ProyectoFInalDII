@@ -20,9 +20,9 @@ namespace Persistencia
             return _instancia;
         }
 
-        public void Alta(Vuelo unV)
+        public void Alta(Vuelo unV, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("AltaVuelo", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@CodigoV", unV.CodigoVuelo);
@@ -57,9 +57,9 @@ namespace Persistencia
             }
         }
 
-        public List<Vuelo> ListadoVuelos()
+        public List<Vuelo> ListadoVuelos(Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Vuelo unV = null;
             List<Vuelo> Lista = new List<Vuelo>();
             SqlCommand Comando = new SqlCommand("ListadoVuelos", _cnn);

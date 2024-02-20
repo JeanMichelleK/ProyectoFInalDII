@@ -19,9 +19,9 @@ namespace Persistencia
                 _instancia = new PersistenciaCliente();
             return _instancia;
         }
-        public void Alta(Cliente unC)
+        public void Alta(Cliente unC, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("AltaCliente", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unC.NroPasaporte);
@@ -50,9 +50,9 @@ namespace Persistencia
                 _cnn.Close();
             }
         }
-        public void Modificar(Cliente unC)
+        public void Modificar(Cliente unC, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("ModificarCliente", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unC.NroPasaporte);
@@ -81,9 +81,9 @@ namespace Persistencia
                 _cnn.Close();
             }
         }
-        public void Baja(Cliente unC)
+        public void Baja(Cliente unC, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("AltaCliente", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unC.NroPasaporte);
@@ -109,9 +109,9 @@ namespace Persistencia
                 _cnn.Close();
             }
         }
-        public Cliente BuscarClienteActivo(string pPasaporte)
+        public Cliente BuscarClienteActivo(string pPasaporte, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Cliente unC = null;
             SqlCommand Comando = new SqlCommand("BuscarClienteActivo", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
@@ -136,9 +136,9 @@ namespace Persistencia
             }
             return unC;
         }
-        internal Cliente BuscarClienteTodos(string pPasaporte)
+        internal Cliente BuscarClienteTodos(string pPasaporte, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Cliente unC = null;
             SqlCommand Comando = new SqlCommand("BuscarCliente", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;

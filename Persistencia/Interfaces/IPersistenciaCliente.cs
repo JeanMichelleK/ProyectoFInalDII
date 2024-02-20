@@ -9,9 +9,9 @@ namespace Persistencia
 {
     public interface IPersistenciaCliente
     {
-        void Alta(Cliente unC);
-        void Modificar(Cliente unC);
-        void Baja(Cliente unC);
-        Cliente BuscarClienteActivo(string pPasaporte);
+        void Alta(Cliente unC, Empleado pUsu);
+        void Modificar(Cliente unC, Empleado pUsu);
+        void Baja(Cliente unC, Empleado pUsu);
+        Cliente BuscarClienteActivo(string pPasaporte, Empleado pUsu);
     }
 }

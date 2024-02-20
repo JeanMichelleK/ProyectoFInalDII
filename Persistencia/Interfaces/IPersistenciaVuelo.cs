@@ -9,8 +9,8 @@ namespace Persistencia
 {
     public interface IPersistenciaVuelo
     {
-        void Alta(Vuelo unV);
+        void Alta(Vuelo unV, Empleado pUsu);
 
-        List<Vuelo> ListadoVuelos();
+        List<Vuelo> ListadoVuelos(Empleado pUsu);
     }
 }

@@ -20,9 +20,9 @@ namespace Persistencia
             return _instancia;
         }
 
-        public void Alta(Ciudad unaC)
+        public void Alta(Ciudad unaC, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("AltaCiudad", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@CodigoC", unaC.CodigoCiudad);
@@ -51,9 +51,9 @@ namespace Persistencia
             }
         }
 
-        public void Modificar(Ciudad unaC)
+        public void Modificar(Ciudad unaC, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("ModificarCiudad", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@CodigoC", unaC.CodigoCiudad);
@@ -81,9 +81,9 @@ namespace Persistencia
                 _cnn.Close();
             }
         }
-        public void Baja(Ciudad unaC)
+        public void Baja(Ciudad unaC, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             SqlCommand Comando = new SqlCommand("BajaCiudad", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@CodigoC", unaC.CodigoCiudad);
@@ -110,9 +110,9 @@ namespace Persistencia
             }
         }
 
-        public Ciudad BuscarCiudadActiva(string pCodigo)
+        public Ciudad BuscarCiudadActiva(string pCodigo, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Ciudad unaC = null;
             SqlCommand Comando = new SqlCommand("BuscarCiudadActiva", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
@@ -137,9 +137,9 @@ namespace Persistencia
             }
             return unaC;
         }
-        internal Ciudad BuscarCiudadTodas(string pCodigo)
+        internal Ciudad BuscarCiudadTodas(string pCodigo, Empleado pUsu)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Ciudad unaC = null;
             SqlCommand Comando = new SqlCommand("BuscarCiudad", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;

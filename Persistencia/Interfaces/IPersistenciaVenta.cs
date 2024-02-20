@@ -9,7 +9,7 @@ namespace Persistencia
 {
     public interface IPersistenciaVenta
     {
-        void Alta(Venta unaV);
+        void Alta(Venta unaV, Empleado pUsu);
         //Ventas de un vuelo
     }
 }

@@ -19,9 +19,9 @@ namespace Persistencia
                 _instancia = new PersistenciaEmpleado();
             return _instancia;
         }
-        public Empleado Buscar(string pUsu)
+        public Empleado Buscar(string pUsu, Empleado pUsuario)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsuario));
             Empleado unE = null;
             SqlCommand Comando = new SqlCommand("BuscarEmpleado", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
