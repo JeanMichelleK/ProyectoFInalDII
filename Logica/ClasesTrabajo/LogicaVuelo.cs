@@ -20,7 +20,14 @@ namespace Logica
         }
         public void Alta(Vuelo unV)
         {
-            FabricaPersistencia.GetPersistenciaVuelo().Alta(unV);
+            if (unV.FechaHoraSalida >= DateTime.Now)
+            {
+                FabricaPersistencia.GetPersistenciaVuelo().Alta(unV);
+            }
+            else
+            {
+                throw new Exception("El vuelo no puede ser en el pasado.");
+            }
         }
         public List<Vuelo> ListadoVuelos()
         {

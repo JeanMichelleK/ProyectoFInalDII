@@ -31,11 +31,7 @@ namespace EC
         public DateTime FechaHoraSalida
         {
             get { return _fechaHoraSalida; }
-            set {
-                if (value <= DateTime.Now)
-                { throw new Exception("La fecha y hora de salida debe ser en el futuro"); } //Esto va en la logica
-                _fechaHoraSalida = value;
-            }
+            set { _fechaHoraSalida = value; }
         }
         [DisplayName("Fecha y hora de llegada")]
         public DateTime FechaHoraLlegada
