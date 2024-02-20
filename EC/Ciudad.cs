@@ -15,41 +15,20 @@ namespace EC
         [DisplayName("Codigo de la Ciudad")]
         public string CodigoCiudad
         {
-            get
-            {
-                return _codigoCiudad;
-            }
-
-            set
-            {
-                _codigoCiudad = value;
-            }
+            get { return _codigoCiudad; }
+            set { _codigoCiudad = value; }
         }
 
         public string Nombre
         {
-            get
-            {
-                return _nombre;
-            }
-
-            set
-            {             
-                _nombre = value;
-            }
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
         public string Pais
         {
-            get
-            {
-                return _pais;
-            }
-
-            set
-            {
-                _pais = value;
-            }
+            get { return _pais; }
+            set { _pais = value; }
         }
 
         public Ciudad() { }
@@ -65,9 +44,9 @@ namespace EC
         {
             if (this.CodigoCiudad.Trim().Length != 6 && !this.CodigoCiudad.Trim().All(char.IsLetter))
              throw new Exception("El codigo debe ser estrictamente de 6 letras");
-            if (this.Nombre.Trim().Length <= 3)
-             throw new Exception("El nombre debe tener al menos 3 letras");
-            if (this.Pais.Trim().Length <= 4)
+            if (this.Nombre.Trim().Length < 3 || this.Nombre.Trim().Length > 30)
+             throw new Exception("El nombre debe tener al menos 3 letras y no mas de 30.");
+            if (this.Pais.Trim().Length <= 4 || this.Pais.Trim().Length > 30)
              throw new Exception("Debe ingresar un pais valido"); 
         }
     }

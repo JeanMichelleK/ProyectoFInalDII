@@ -13,90 +13,52 @@ namespace EC
         private string _direccion;
         private double _impuestoSalida;
         private double _impuestoLlegada;
+        private string _CodigoC;
         private Ciudad _ciudad;
 
         [DisplayName("Codigo de Aeropuerto")]
         public string CodigoA
         {
-            get
-            {
-                return _codigoA;
-            }
-
-            set
-            {
-                _codigoA = value;
-            }
+            get { return _codigoA; }
+            set { _codigoA = value; }
         }
 
         public string Nombre
         {
-            get
-            {
-                return _nombre;
-            }
-
-            set
-            {  
-                _nombre = value;
-            }
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
 
         public string Direccion
         {
-            get
-            {
-                return _direccion;
-            }
-
-            set
-            {              
-                _direccion = value;
-            }
+            get { return _direccion; }
+            set { _direccion = value; }
         }
 
         public double ImpuestoSalida
         {
-            get
-            {
-                return _impuestoSalida;
-            }
-
-            set
-            {             
-                _impuestoSalida = value;
-            }
+            get { return _impuestoSalida; }
+            set { _impuestoSalida = value; }
         }
 
         public double ImpuestoLlegada
         {
-            get
-            {
-                return _impuestoLlegada;
-            }
-
-            set
-            {             
-                _impuestoLlegada = value;
-            }
+            get { return _impuestoLlegada; }
+            set { _impuestoLlegada = value; }
         }
 
         public Ciudad Ciudad
         {
-            get
-            {
-                return _ciudad;
-            }
-
-            set
-            {
-                if (value == null)
-                { throw new Exception("Se debe saber la ciudad"); }
-                _ciudad = value;
-            }
+            get { return _ciudad; }
+            set { _ciudad = value; }
         }
 
+        public string CodigoC
+        {
+            get { return _CodigoC; }
+            set { _CodigoC = value; }
+        }
 
         public Aeropuerto()
         {
@@ -116,19 +78,16 @@ namespace EC
         {
             if (this.CodigoA.Trim().Length != 3 && !this.CodigoA.All(char.IsLetter))
                 throw new Exception("El codigo debe ser estrictamente de 3 letras");
-            if (this.Nombre.Trim().Length <= 3)
-             throw new Exception("El nombre debe tener al menos 3 letras");
-            if (this.Direccion.Trim().Length <= 5)
+            if (this.Nombre.Trim().Length < 3 || this.Nombre.Trim().Length > 60)
+             throw new Exception("El nombre debe tener al menos 3 letras y hasta un maximo de 60 caracteres.");
+            if (this.Direccion.Trim().Length <= 5 || this.Direccion.Trim().Length > 60)
              throw new Exception("Debe ingresar una direccion valida");
             if (this.ImpuestoSalida <= 0)
              throw new Exception("El impuesto debe ser mayor a 0");
             if (this.ImpuestoLlegada <= 0)
-             throw new Exception("El impuesto debe ser mayor a 0"); 
-
-
-
-
-
+             throw new Exception("El impuesto debe ser mayor a 0");
+            if (this.Ciudad == null)
+             throw new Exception("Se debe saber la ciudad"); 
         }
     }
 }
