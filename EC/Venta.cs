@@ -16,7 +16,6 @@ namespace EC
         private DateTime _fechaVenta;
         private double _monto;
         private Empleado _usuario;
-        private string _Usu;
         private List<Pasaje> _ListaP;
 
         public int IdVenta
@@ -64,12 +63,6 @@ namespace EC
             set { _NroPasaporte = value; }
         }
 
-        public string Usu
-        {
-            get { return _Usu; }
-            set { _Usu = value; }
-        }
-
         public string CodigoV
         {
             get { return _CodigoV; }
@@ -97,7 +90,7 @@ namespace EC
                  throw new Exception("El monto debe ser mayor a 0.");
             if (this.Usuario == null)
                 throw new Exception("Se debe saber el empleado que genera la compra.");
-            if (this.ListaP == null)
+            if (this.ListaP == null || this.ListaP.Count == 0)
                 throw new Exception("Se necesita la lista de pasajes vendidos.");
         }
     }

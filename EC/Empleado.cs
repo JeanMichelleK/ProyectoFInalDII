@@ -45,8 +45,8 @@ namespace EC
         }
         private void Validar()
         {
-            if (this.Usuario.Trim().Length != 10)
-                throw new Exception("El nombre de usuario es de 10 caracteres.");
+            if (this.Usuario.Trim().Length > 10)
+                throw new Exception("El nombre de usuario es de 10 caracteres maximo.");
             if (this.Contraseña.Trim().Length < 5 || this.Contraseña.Trim().Length > 16)
                 throw new Exception("La contraseña debe ser de 5 a 16 caracteres.");
             if (this.NomCompleto.Trim().Length < 5 || this.NomCompleto.Trim().Length > 30)
