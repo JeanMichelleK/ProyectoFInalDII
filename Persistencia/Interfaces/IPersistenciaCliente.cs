@@ -13,5 +13,6 @@ namespace Persistencia
         void Modificar(Cliente unC, Empleado pUsu);
         void Baja(Cliente unC, Empleado pUsu);
         Cliente BuscarClienteActivo(string pPasaporte, Empleado pUsu);
+        List<Cliente> ListadoClientes(Empleado pUsu);
     }
 }

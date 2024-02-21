@@ -10,6 +10,6 @@ namespace Persistencia
     public interface IPersistenciaVenta
     {
         void Alta(Venta unaV, Empleado pUsu);
-        //Ventas de un vuelo
+        List<Venta> VentaVuelo(string pCodigoV, Empleado pUsu);
     }
 }

@@ -13,5 +13,6 @@ namespace Persistencia
         void Modificar(Aeropuerto unA, Empleado pUsu);
         void Baja(Aeropuerto unA, Empleado pUsu);
         Aeropuerto BuscarAeropuertoActivo(string pCodigo, Empleado pUsu);
+        List<Aeropuerto> ListadoAeropuertos(Empleado pUsu);
     }
 }

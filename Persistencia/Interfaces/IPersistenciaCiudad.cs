@@ -16,5 +16,7 @@ namespace Persistencia
         void Baja(Ciudad unaC, Empleado pUsu);
 
         Ciudad BuscarCiudadActiva(string pCodigo, Empleado pUsu);
+
+        List<Ciudad> ListadoCiudades(Empleado pUsu);
     }
 }

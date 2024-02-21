@@ -163,5 +163,35 @@ namespace Persistencia
             }
             return unC;
         }
+        internal List<Cliente> ListadoClientes(Empleado pUsu)
+        {
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
+            Cliente unC = null;
+            List<Cliente> Lista = new List<Cliente>();
+            SqlCommand Comando = new SqlCommand("ListarCliente", _cnn);
+            Comando.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                _cnn.Open();
+                SqlDataReader Lector = Comando.ExecuteReader();
+                if (Lector.HasRows)
+                {
+                    while (Lector.Read())
+                    {
+                        unC = new Cliente((string)Lector["NroPasaporte"], (string)Lector["Nombre"], (string)Lector["PassCli"], (string)Lector["NroTarjeta"]);
+                        Lista.Add(unC);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _cnn.Close();
+            }
+            return Lista;
+        }
     }
 }

@@ -54,6 +54,40 @@ namespace Persistencia
             {
                 _cnn.Close();
             }
+
+
+        }
+
+        public List<Venta> VentaVuelo(string pCodigoV, Empleado pUsu)
+        {
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
+            List<Venta> Lista = new List<Venta>();
+            Venta unaV = null;
+            SqlCommand Comando = new SqlCommand("ListadoVentasDeVuelo", _cnn);
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@CodigoV", pCodigoV);
+            try
+            {
+                _cnn.Open();
+                SqlDataReader Lector = Comando.ExecuteReader();
+                if (Lector.HasRows)
+                {
+                    while (Lector.Read())
+                    {
+                        unaV = new Venta((int)Lector["IdVenta"], FabricaPersistencia.GetPersistenciaCliente().BuscarClienteActivo((string)Lector["NroPasaporte"], pUsu), (Vuelo)Lector["CodigoV"], Convert.ToDateTime(Lector["FechaVenta"]), Convert.ToDouble(Lector["Monto"]), FabricaPersistencia.GetPersistenciaEmpleado().Buscar((string)Lector["Usuario"], pUsu), PersistenciaPasaje.GetInstancia().ListarPasajes((string)Lector["CodigoV"], pUsu);
+                        Lista.Add(unaV);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _cnn.Close();
+            }
+            return Lista;
         }
     }
 }

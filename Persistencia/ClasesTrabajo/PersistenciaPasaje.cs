@@ -67,7 +67,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unP = new Pasaje((Cliente)Lector["NroPasaporte"], (Venta)Lector["IdVenta"], (int)Lector["Asiento"]);
+                        unP = new Pasaje((Cliente)Lector["NroPasaporte"],(int)Lector["Asiento"]);
                         Lista.Add(unP);
                     }
                 }

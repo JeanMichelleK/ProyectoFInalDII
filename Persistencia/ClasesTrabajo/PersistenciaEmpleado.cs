@@ -47,5 +47,35 @@ namespace Persistencia
             }
             return unE;
         }
+
+        public Empleado Logueo(Empleado pEmp)
+        {
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pEmp));
+            Empleado unE = null;
+            SqlCommand Comando = new SqlCommand("LogueoEmpleado", _cnn);
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@Usuario", pEmp.Usuario);
+            Comando.Parameters.AddWithValue("@PassUsu", pEmp.Contraseña);
+            try
+            {
+                _cnn.Open();
+                SqlDataReader Lector = Comando.ExecuteReader();
+                if (Lector.HasRows)
+                {
+                    Lector.Read();
+                    unE = new Empleado((string)Lector["Usuario"], (string)Lector["PassUsu"], (string)Lector["NombreCompleto"], (string)Lector["Labor"]);
+                }
+                Lector.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _cnn.Close();
+            }
+            return unE;
+        }
     }
 }

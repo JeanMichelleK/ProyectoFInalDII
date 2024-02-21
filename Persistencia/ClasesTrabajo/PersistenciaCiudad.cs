@@ -125,7 +125,7 @@ namespace Persistencia
                 {
                     Lector.Read();
                     unaC = new Ciudad((string)Lector["CodigoC"], (string)Lector["Nombre"], (string)Lector["Pais"]);
-                }  
+                }
             }
             catch (Exception ex)
             {
@@ -163,6 +163,37 @@ namespace Persistencia
                 _cnn.Close();
             }
             return unaC;
+        }
+
+        internal List<Ciudad> ListadoCiudades(Empleado pUsu)
+        {
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
+            Ciudad unaC = null;
+            List<Ciudad> Lista = new List<Ciudad>();
+            SqlCommand Comando = new SqlCommand("ListarCiudades", _cnn);
+            Comando.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                _cnn.Open();
+                SqlDataReader Lector = Comando.ExecuteReader();
+                if (Lector.HasRows)
+                {
+                    while (Lector.Read())
+                    {
+                        unaC = new Ciudad((string)Lector["CodigoC"], (string)Lector["Nombre"], (string)Lector["Pais"]);
+                        Lista.Add(unaC);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _cnn.Close();
+            }
+            return Lista;
         }
     }
 }

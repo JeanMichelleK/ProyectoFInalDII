@@ -10,5 +10,6 @@ namespace Persistencia
     public interface IPersistenciaEmpleado
     {
         Empleado Buscar(string pUsu, Empleado pUsuario);
+        Empleado Logueo(Empleado pEmp);
     }
 }

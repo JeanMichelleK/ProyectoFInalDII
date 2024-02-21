@@ -153,6 +153,7 @@ namespace Persistencia
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Aeropuerto unA = null;
             SqlCommand Comando = new SqlCommand("BuscarAeropuerto", _cnn);
+            Comando.Parameters.AddWithValue("@CodigoA", pCodigo);
             Comando.CommandType = CommandType.StoredProcedure;
             try
             {
@@ -173,6 +174,37 @@ namespace Persistencia
                 _cnn.Close();
             }
             return unA;
+        }
+
+        internal List<Aeropuerto> ListadoAeropuertos(Empleado pUsu)
+        {
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
+            Aeropuerto unA = null;
+            List<Aeropuerto> Lista = new List<Aeropuerto>();
+            SqlCommand Comando = new SqlCommand("ListarAeropuerto", _cnn);
+            Comando.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                _cnn.Open();
+                SqlDataReader Lector = Comando.ExecuteReader();
+                if (Lector.HasRows)
+                {
+                    while (Lector.Read())
+                    {
+                        unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), FabricaPersistencia.GetPersistenciaCiudad().BuscarCiudadActiva((string)Lector["CodigoC"]));
+                        Lista.Add(unA);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _cnn.Close();
+            }
+            return Lista;
         }
     }
 }
