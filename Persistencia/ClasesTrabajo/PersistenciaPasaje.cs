@@ -11,29 +11,19 @@ namespace Persistencia
 {
     internal class PersistenciaPasaje 
     {
-        private static PersistenciaPasaje _instancia = null;
-        private PersistenciaPasaje() { }
-        public static PersistenciaPasaje GetInstancia()
+        internal void Alta(Pasaje unP, int pIdVenta, SqlTransaction pTransaccion)
         {
-            if (_instancia == null)
-                _instancia = new PersistenciaPasaje();
-            return _instancia;
-        }
-
-        public void Alta(Pasaje unP, Empleado pUsu)
-        {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
-            SqlCommand Comando = new SqlCommand("AltaPasaje", _cnn);
+            SqlCommand Comando = new SqlCommand("AltaPasaje", pTransaccion.Connection);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unP.Cliente.NroPasaporte);
-            Comando.Parameters.AddWithValue("@IdVenta", unP.Venta.IdVenta);
+            Comando.Parameters.AddWithValue("@IdVenta", pIdVenta);
             Comando.Parameters.AddWithValue("@Asiento", unP.Asiento);
             SqlParameter Retorno = new SqlParameter("@Retorno", SqlDbType.Int);
             Retorno.Direction = ParameterDirection.ReturnValue;
             Comando.Parameters.Add(Retorno);
             try
             {
-                _cnn.Open();
+                Comando.Transaction = pTransaccion;
                 Comando.ExecuteNonQuery();
                 int Return = Convert.ToInt32(Retorno.Value);
                 if (Return == -1)
@@ -47,17 +37,14 @@ namespace Persistencia
             {
                 throw new Exception(ex.Message);
             }
-            finally
-            {
-                _cnn.Close();
-            }
         }
-        public List<Pasaje> ListarPasajes(int CodigoV, Empleado pUsu)
+        internal List<Pasaje> ListarPasajes(int pCodigoV, Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Pasaje unP = null;
             List<Pasaje> Lista = new List<Pasaje>();
             SqlCommand Comando = new SqlCommand("ListarPasajes", _cnn);
+            Comando.Parameters.AddWithValue("@CodigoV", pCodigoV);
             Comando.CommandType = CommandType.StoredProcedure;
             try
             {
@@ -67,7 +54,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unP = new Pasaje((Cliente)Lector["NroPasaporte"],(int)Lector["Asiento"]);
+                        unP = new Pasaje(PersistenciaCliente.GetInstancia().BuscarClienteTodos((string)Lector["NroPasaporte"]), (int)Lector["Asiento"]);
                         Lista.Add(unP);
                     }
                 }

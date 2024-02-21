@@ -81,7 +81,7 @@ namespace Persistencia
                 if (Return == -2)
                     throw new Exception("Esa ciudad no existe.");
                 if (Return == -3)
-                    throw new Exception("Error al dar de alta, intentelo de nuevo.");
+                    throw new Exception("Error al modificar, intentelo de nuevo.");
             }
             catch (Exception ex)
             {
@@ -110,7 +110,7 @@ namespace Persistencia
                 if (Return == -1)
                     throw new Exception("Ese aeropuerto no existe.");
                 if (Return == -2)
-                    throw new Exception("Error al dar de alta, intentelo de nuevo.");
+                    throw new Exception("Error al dar de baja, intentelo de nuevo.");
             }
             catch (Exception ex)
             {
@@ -135,7 +135,7 @@ namespace Persistencia
                 if (Lector.HasRows)
                 {
                     Lector.Read();
-                    unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]),FabricaPersistencia.GetPersistenciaCiudad().BuscarCiudadActiva((string)Lector["CodigoC"]));
+                    unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]),PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"]));
                 }
             }
             catch (Exception ex)
@@ -162,7 +162,7 @@ namespace Persistencia
                 if (Lector.HasRows)
                 {
                     Lector.Read();
-                    unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), FabricaPersistencia.GetPersistenciaCiudad().BuscarCiudadActiva((string)Lector["CodigoC"]));
+                    unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"]));
                 }
             }
             catch (Exception ex)
@@ -191,7 +191,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), FabricaPersistencia.GetPersistenciaCiudad().BuscarCiudadActiva((string)Lector["CodigoC"]));
+                        unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"]));
                         Lista.Add(unA);
                     }
                 }

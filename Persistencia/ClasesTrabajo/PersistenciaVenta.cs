@@ -22,6 +22,7 @@ namespace Persistencia
         public void Alta(Venta unaV, Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
+            SqlTransaction Transaccion = null;
             SqlCommand Comando = new SqlCommand("AltaVenta", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unaV.Cliente.NroPasaporte);
@@ -35,6 +36,8 @@ namespace Persistencia
             try
             {
                 _cnn.Open();
+                Transaccion = _cnn.BeginTransaction();
+                Comando.Transaction = Transaccion;
                 Comando.ExecuteNonQuery();
                 int Return = Convert.ToInt32(Retorno.Value);
                 if (Return == -1)
@@ -45,6 +48,11 @@ namespace Persistencia
                     throw new Exception("El empleado no existe.");
                 if (Return == -4)
                     throw new Exception("Error al dar de alta, intentelo de nuevo.");
+                foreach (Pasaje Pasa in unaV.ListaP)
+                {
+                    PersistenciaPasaje.Alta(Pasa, Return, Transaccion);
+                }
+                Transaccion.Commit();
             }
             catch (Exception ex)
             {
@@ -54,11 +62,9 @@ namespace Persistencia
             {
                 _cnn.Close();
             }
-
-
         }
 
-        public List<Venta> VentaVuelo(string pCodigoV, Empleado pUsu)
+        public List<Venta> VentaVuelo(Vuelo punV, Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             List<Venta> Lista = new List<Venta>();
@@ -74,7 +80,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unaV = new Venta((int)Lector["IdVenta"], FabricaPersistencia.GetPersistenciaCliente().BuscarClienteActivo((string)Lector["NroPasaporte"], pUsu), (Vuelo)Lector["CodigoV"], Convert.ToDateTime(Lector["FechaVenta"]), Convert.ToDouble(Lector["Monto"]), FabricaPersistencia.GetPersistenciaEmpleado().Buscar((string)Lector["Usuario"], pUsu), PersistenciaPasaje.GetInstancia().ListarPasajes((string)Lector["CodigoV"], pUsu);
+                        unaV = new Venta((int)Lector["IdVenta"], PersistenciaCliente.GetInstancia().BuscarClienteTodos((string)Lector["NroPasaporte"], pUsu), punV, Convert.ToDateTime(Lector["FechaVenta"]), Convert.ToDouble(Lector["Monto"]), FabricaPersistencia.GetPersistenciaEmpleado().Buscar((string)Lector["Usuario"], pUsu), PersistenciaPasaje.GetInstancia().ListarPasajes((int)Lector["IdVenta"], pUsu));
                         Lista.Add(unaV);
                     }
                 }

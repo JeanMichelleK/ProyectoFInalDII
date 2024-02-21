@@ -48,14 +48,14 @@ namespace Persistencia
             return unE;
         }
 
-        public Empleado Logueo(Empleado pEmp)
+        public Empleado Logueo(string pUsu, string pPass)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pEmp));
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
             Empleado unE = null;
             SqlCommand Comando = new SqlCommand("LogueoEmpleado", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
-            Comando.Parameters.AddWithValue("@Usuario", pEmp.Usuario);
-            Comando.Parameters.AddWithValue("@PassUsu", pEmp.Contraseña);
+            Comando.Parameters.AddWithValue("@Usuario", pUsu);
+            Comando.Parameters.AddWithValue("@PassUsu", pPass);
             try
             {
                 _cnn.Open();
