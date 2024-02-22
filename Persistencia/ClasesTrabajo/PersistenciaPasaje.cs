@@ -11,16 +11,7 @@ namespace Persistencia
 {
     internal class PersistenciaPasaje 
     {
-        private static PersistenciaPasaje _instancia = null;
-        private PersistenciaPasaje() { }
-        public static PersistenciaPasaje GetInstancia()
-        {
-            if (_instancia == null)
-                _instancia = new PersistenciaPasaje();
-            return _instancia;
-        }
-
-        internal void Alta(Pasaje unP, int pIdVenta, SqlTransaction pTransaccion)
+        internal static void Alta(Pasaje unP, int pIdVenta, SqlTransaction pTransaccion)
         {
             SqlCommand Comando = new SqlCommand("AltaPasaje", pTransaccion.Connection);
             Comando.CommandType = CommandType.StoredProcedure;
@@ -47,7 +38,7 @@ namespace Persistencia
                 throw new Exception(ex.Message);
             }
         }
-        internal List<Pasaje> ListarPasajes(int pCodigoV, Empleado pUsu)
+        internal static List<Pasaje> ListarPasajes(int pCodigoV, Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Pasaje unP = null;

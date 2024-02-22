@@ -80,7 +80,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unaV = new Venta((int)Lector["IdVenta"], PersistenciaCliente.GetInstancia().BuscarClienteTodos((string)Lector["NroPasaporte"], pUsu), punV, Convert.ToDateTime(Lector["FechaVenta"]), Convert.ToDouble(Lector["Monto"]), FabricaPersistencia.GetPersistenciaEmpleado().Buscar((string)Lector["Usuario"], pUsu), PersistenciaPasaje.GetInstancia().ListarPasajes((int)Lector["IdVenta"], pUsu));
+                        unaV = new Venta((int)Lector["IdVenta"], PersistenciaCliente.GetInstancia().BuscarClienteTodos((string)Lector["NroPasaporte"], pUsu), punV, Convert.ToDateTime(Lector["FechaVenta"]), Convert.ToDouble(Lector["Monto"]), FabricaPersistencia.GetPersistenciaEmpleado().Buscar((string)Lector["Usuario"], pUsu), PersistenciaPasaje.ListarPasajes((int)Lector["IdVenta"], pUsu));
                         Lista.Add(unaV);
                     }
                 }

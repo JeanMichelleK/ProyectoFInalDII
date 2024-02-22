@@ -44,7 +44,6 @@
     <Compile Include="ClasesTrabajo\LogicaCiudad.cs" />
     <Compile Include="ClasesTrabajo\LogicaCliente.cs" />
     <Compile Include="ClasesTrabajo\LogicaEmpleado.cs" />
-    <Compile Include="ClasesTrabajo\LogicaPasaje.cs" />
     <Compile Include="ClasesTrabajo\LogicaVenta.cs" />
     <Compile Include="ClasesTrabajo\LogicaVuelo.cs" />
     <Compile Include="FabricaLogica.cs" />
@@ -52,7 +51,6 @@
     <Compile Include="Interfaces\ILogicaCiudad.cs" />
     <Compile Include="Interfaces\ILogicaCliente.cs" />
     <Compile Include="Interfaces\ILogicaEmpleado.cs" />
-    <Compile Include="Interfaces\ILogicaPasaje.cs" />
     <Compile Include="Interfaces\ILogicaVenta.cs" />
     <Compile Include="Interfaces\ILogicaVuelo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
