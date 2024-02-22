@@ -72,7 +72,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unV = new Vuelo((string)Lector["CodigoV"], Convert.ToDateTime(Lector["FechaYHoraSalida"]), Convert.ToDateTime(Lector["FechaYHoraLlegada"]),PersistenciaAeropuerto.GetInstancia().BuscarAeropuertoTodos((string)Lector["AeropuertoPartida"]), PersistenciaAeropuerto.GetInstancia().BuscarAeropuertoTodos((string)Lector["AeropuertoLlegada"]), Convert.ToDouble(Lector["Precio"]), Convert.ToInt32(Lector["CantAsientos"]));
+                        unV = new Vuelo((string)Lector["CodigoV"], Convert.ToDateTime(Lector["FechaYHoraSalida"]), Convert.ToDateTime(Lector["FechaYHoraLlegada"]),PersistenciaAeropuerto.GetInstancia().BuscarAeropuertoTodos((string)Lector["AeropuertoPartida"],pUsu), PersistenciaAeropuerto.GetInstancia().BuscarAeropuertoTodos((string)Lector["AeropuertoLlegada"],pUsu), Convert.ToDouble(Lector["Precio"]), Convert.ToInt32(Lector["CantAsientos"]));
                         Lista.Add(unV);
                     }
                 }

@@ -135,7 +135,7 @@ namespace Persistencia
                 if (Lector.HasRows)
                 {
                     Lector.Read();
-                    unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]),PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"]));
+                    unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]),PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"],pUsu));
                 }
             }
             catch (Exception ex)
@@ -162,7 +162,7 @@ namespace Persistencia
                 if (Lector.HasRows)
                 {
                     Lector.Read();
-                    unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"]));
+                    unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"],pUsu));
                 }
             }
             catch (Exception ex)
@@ -176,7 +176,7 @@ namespace Persistencia
             return unA;
         }
 
-        internal List<Aeropuerto> ListadoAeropuertos(Empleado pUsu)
+        public List<Aeropuerto> ListadoAeropuertos(Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Aeropuerto unA = null;
@@ -191,7 +191,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"]));
+                        unA = new Aeropuerto((string)Lector["CodigoA"], (string)Lector["Nombre"], (string)Lector["Direccion"], Convert.ToDouble(Lector["ImpuestoS"]), Convert.ToDouble(Lector["ImpuestoL"]), PersistenciaCiudad.GetInstancia().BuscarCiudadTodas((string)Lector["CodigoC"],pUsu));
                         Lista.Add(unA);
                     }
                 }

@@ -163,7 +163,7 @@ namespace Persistencia
             }
             return unC;
         }
-        internal List<Cliente> ListadoClientes(Empleado pUsu)
+        public List<Cliente> ListadoClientes(Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Cliente unC = null;

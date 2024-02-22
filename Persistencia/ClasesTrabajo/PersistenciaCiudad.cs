@@ -165,7 +165,7 @@ namespace Persistencia
             return unaC;
         }
 
-        internal List<Ciudad> ListadoCiudades(Empleado pUsu)
+        public List<Ciudad> ListadoCiudades(Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Ciudad unaC = null;

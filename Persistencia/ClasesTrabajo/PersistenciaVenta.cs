@@ -71,7 +71,7 @@ namespace Persistencia
             Venta unaV = null;
             SqlCommand Comando = new SqlCommand("ListadoVentasDeVuelo", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
-            Comando.Parameters.AddWithValue("@CodigoV", pCodigoV);
+            Comando.Parameters.AddWithValue("@CodigoV", punV.CodigoVuelo);
             try
             {
                 _cnn.Open();

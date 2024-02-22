@@ -11,6 +11,15 @@ namespace Persistencia
 {
     internal class PersistenciaPasaje 
     {
+        private static PersistenciaPasaje _instancia = null;
+        private PersistenciaPasaje() { }
+        public static PersistenciaPasaje GetInstancia()
+        {
+            if (_instancia == null)
+                _instancia = new PersistenciaPasaje();
+            return _instancia;
+        }
+
         internal void Alta(Pasaje unP, int pIdVenta, SqlTransaction pTransaccion)
         {
             SqlCommand Comando = new SqlCommand("AltaPasaje", pTransaccion.Connection);
@@ -54,7 +63,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unP = new Pasaje(PersistenciaCliente.GetInstancia().BuscarClienteTodos((string)Lector["NroPasaporte"]), (int)Lector["Asiento"]);
+                        unP = new Pasaje(PersistenciaCliente.GetInstancia().BuscarClienteTodos((string)Lector["NroPasaporte"],pUsu), (int)Lector["Asiento"]);
                         Lista.Add(unP);
                     }
                 }
