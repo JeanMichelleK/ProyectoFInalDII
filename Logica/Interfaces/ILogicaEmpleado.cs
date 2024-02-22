@@ -9,6 +9,7 @@ namespace Logica
 {
     public interface ILogicaEmpleado
     {
-        Empleado Buscar(string pUsu);
+        Empleado Buscar(string pUsu, Empleado pUsuario);
+        Empleado Logueo(string pUsu, string pPass);
     }
 }

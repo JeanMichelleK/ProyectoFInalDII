@@ -18,21 +18,25 @@ namespace Logica
                 _Instancia = new LogicaCiudad();
             return _Instancia;
         }
-        public void Alta(Ciudad unaC)
+        public void Alta(Ciudad unaC, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaCiudad().Alta(unaC);
+            FabricaPersistencia.GetPersistenciaCiudad().Alta(unaC, pUsu);
         }
-        public void Modificar(Ciudad unaC)
+        public void Modificar(Ciudad unaC, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaCiudad().Modificar(unaC);
+            FabricaPersistencia.GetPersistenciaCiudad().Modificar(unaC, pUsu);
         }
-        public void Baja(Ciudad unaC)
+        public void Baja(Ciudad unaC, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaCiudad().Baja(unaC);
+            FabricaPersistencia.GetPersistenciaCiudad().Baja(unaC, pUsu);
         }
-        public Ciudad Buscar(string pCodigo)
+        public Ciudad Buscar(string pCodigo, Empleado pUsu)
         {
-            return (FabricaPersistencia.GetPersistenciaCiudad().BuscarCiudadActiva(pCodigo));
+            return (FabricaPersistencia.GetPersistenciaCiudad().BuscarCiudadActiva(pCodigo,pUsu));
+        }
+        public List<Ciudad> ListadoCiudades(Empleado pUsu)
+        {
+            return (FabricaPersistencia.GetPersistenciaCiudad().ListadoCiudades(pUsu));
         }
     }
 }

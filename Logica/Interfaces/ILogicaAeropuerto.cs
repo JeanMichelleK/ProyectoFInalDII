@@ -9,9 +9,10 @@ namespace Logica
 {
     public interface ILogicaAeropuerto
     {
-        void Alta(Aeropuerto unA);
-        void Modificar(Aeropuerto unA);
-        void Baja(Aeropuerto unA);
-        Aeropuerto Buscar(string pCodigoA);
+        void Alta(Aeropuerto unA, Empleado pUsu);
+        void Modificar(Aeropuerto unA, Empleado pUsu);
+        void Baja(Aeropuerto unA, Empleado pUsu);
+        Aeropuerto Buscar(string pCodigoA, Empleado pUsu);
+        List<Aeropuerto> ListadoAeropuerto(Empleado pUsu);
     }
 }

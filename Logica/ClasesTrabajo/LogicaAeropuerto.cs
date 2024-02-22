@@ -19,21 +19,25 @@ namespace Logica
                 _Instancia = new LogicaAeropuerto();
             return _Instancia;
         }
-        public void Alta(Aeropuerto unA)
+        public void Alta(Aeropuerto unA, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaAeropuerto().Alta(unA);
+            FabricaPersistencia.GetPersistenciaAeropuerto().Alta(unA, pUsu);
         }
-        public void Modificar(Aeropuerto unA)
+        public void Modificar(Aeropuerto unA, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaAeropuerto().Modificar(unA);
+            FabricaPersistencia.GetPersistenciaAeropuerto().Modificar(unA, pUsu);
         }
-        public void Baja(Aeropuerto unA)
+        public void Baja(Aeropuerto unA, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaAeropuerto().Baja(unA);
+            FabricaPersistencia.GetPersistenciaAeropuerto().Baja(unA, pUsu);
         }
-        public Aeropuerto Buscar(string pCodigo)
+        public Aeropuerto Buscar(string pCodigo, Empleado pUsu)
         {
-            return (FabricaPersistencia.GetPersistenciaAeropuerto().BuscarAeropuertoActivo(pCodigo));
+            return (FabricaPersistencia.GetPersistenciaAeropuerto().BuscarAeropuertoActivo(pCodigo, pUsu));
+        }
+        public List<Aeropuerto> ListadoAeropuertos(Empleado pUsu)
+        {
+            return (FabricaPersistencia.GetPersistenciaAeropuerto().ListadoAeropuertos(pUsu));
         }
     }
 }

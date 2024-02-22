@@ -18,21 +18,25 @@ namespace Logica
                 _Instancia = new LogicaCliente();
             return _Instancia;
         }
-        public void Alta(Cliente unC)
+        public void Alta(Cliente unC, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaCliente().Alta(unC);
+            FabricaPersistencia.GetPersistenciaCliente().Alta(unC, pUsu);
         }
-        public void Modificar(Cliente unC)
+        public void Modificar(Cliente unC, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaCliente().Modificar(unC);
+            FabricaPersistencia.GetPersistenciaCliente().Modificar(unC, pUsu);
         }
-        public void Baja(Cliente unC)
+        public void Baja(Cliente unC, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaCliente().Baja(unC);
+            FabricaPersistencia.GetPersistenciaCliente().Baja(unC, pUsu);
         }
-        public Cliente Buscar(string pNroPasaporte)
+        public Cliente Buscar(string pNroPasaporte, Empleado pUsu)
         {
-            return (FabricaPersistencia.GetPersistenciaCliente().BuscarClienteActivo(pNroPasaporte));
+            return (FabricaPersistencia.GetPersistenciaCliente().BuscarClienteActivo(pNroPasaporte, pUsu));
+        }
+        public List<Cliente> ListadoClientes(Empleado pUsu)
+        {
+            return (FabricaPersistencia.GetPersistenciaCliente().ListadoClientes(pUsu));
         }
     }
 }

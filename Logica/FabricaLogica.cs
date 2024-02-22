@@ -33,10 +33,5 @@ namespace Logica
         {
             return (LogicaVenta.GetInstancia());
         }
-        public static ILogicaPasaje GetLogicaPasaje()
-        {
-            return (LogicaPasaje.GetInstancia());
-        }
-
     }
 }

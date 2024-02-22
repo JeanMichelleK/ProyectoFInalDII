@@ -18,9 +18,13 @@ namespace Logica
                 _Instancia = new LogicaVenta();
             return _Instancia;
         }
-        public void Alta(Venta unaV)
+        public void Alta(Venta unaV, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaVenta().Alta(unaV);
+            FabricaPersistencia.GetPersistenciaVenta().Alta(unaV, Empleado pUsu);
+        }
+        public List<Venta> VentaVuelo(Vuelo unV, Empleado pUsu)
+        {
+            return (FabricaPersistencia.GetPersistenciaVenta().VentaVuelo(unV, pUsu));
         }
     }
 }

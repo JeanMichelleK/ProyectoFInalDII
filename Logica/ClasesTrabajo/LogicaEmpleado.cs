@@ -17,9 +17,13 @@ namespace Logica
                 _Instancia = new LogicaEmpleado();
             return _Instancia;
         }
-        public Empleado Buscar(string pUsu)
+        public Empleado Buscar(string pUsu, Empleado pUsuario)
         {
-            return (FabricaPersistencia.GetPersistenciaEmpleado().Buscar(pUsu));
+            return (FabricaPersistencia.GetPersistenciaEmpleado().Buscar(pUsu, pUsuario));
+        }
+        public Empleado Logueo(string pUsu, string pPass)
+        {
+            return (FabricaPersistencia.GetPersistenciaEmpleado().Logueo(pUsu, pPass));
         }
     }
 }

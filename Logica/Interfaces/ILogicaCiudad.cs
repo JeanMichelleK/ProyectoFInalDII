@@ -9,10 +9,11 @@ namespace Logica
 {
     public interface ILogicaCiudad
     {
-        void Alta(Ciudad unaC);
-        void Modificar(Ciudad unaC);
-        void Baja(Ciudad unaC);
-        Ciudad Buscar(string pCodigoC);
+        void Alta(Ciudad unaC, Empleado pUsu);
+        void Modificar(Ciudad unaC, Empleado pUsu);
+        void Baja(Ciudad unaC, Empleado pUsu);
+        Ciudad Buscar(string pCodigoC, Empleado pUsu);
+        List<Ciudad> ListadoCiudades(Empleado pUsu);
 
     }
 }
