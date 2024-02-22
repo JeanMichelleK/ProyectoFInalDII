@@ -27,7 +27,6 @@ namespace Persistencia
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unaV.Cliente.NroPasaporte);
             Comando.Parameters.AddWithValue("@CodigoV", unaV.Vuelo.CodigoVuelo);
-            Comando.Parameters.AddWithValue("@FechaVenta", unaV.FechaVenta);
             Comando.Parameters.AddWithValue("@Monto", unaV.Monto);
             Comando.Parameters.AddWithValue("@Usuario", unaV.Usuario.Usuario);
             SqlParameter Retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -56,6 +55,7 @@ namespace Persistencia
             }
             catch (Exception ex)
             {
+                Transaccion.Rollback();
                 throw new Exception(ex.Message);
             }
             finally

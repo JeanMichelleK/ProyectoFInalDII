@@ -28,8 +28,8 @@ namespace Persistencia
             Comando.Parameters.AddWithValue("@CodigoV", unV.CodigoVuelo);
             Comando.Parameters.AddWithValue("@FechaYHoraSalida", unV.FechaHoraSalida);
             Comando.Parameters.AddWithValue("@FechaYHoraLlegada", unV.FechaHoraLlegada);
-            Comando.Parameters.AddWithValue("@AeropuertoPartida", unV.AeropuertoPartida);
-            Comando.Parameters.AddWithValue("@AeropuertoLlegada", unV.AeropuertoLlegada);
+            Comando.Parameters.AddWithValue("@AeropuertoPartida", unV.AeropuertoPartida.CodigoA);
+            Comando.Parameters.AddWithValue("@AeropuertoLlegada", unV.AeropuertoLlegada.CodigoA);
             Comando.Parameters.AddWithValue("@Precio", unV.Precio);
             Comando.Parameters.AddWithValue("CantAsientos", unV.CantidadAsientos);
             SqlParameter Retorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -72,7 +72,7 @@ namespace Persistencia
                 {
                     while (Lector.Read())
                     {
-                        unV = new Vuelo((string)Lector["CodigoV"], Convert.ToDateTime(Lector["FechaYHoraSalida"]), Convert.ToDateTime(Lector["FechaYHoraLlegada"]), (Aeropuerto)Lector["AeropuertoPartida"], (Aeropuerto)Lector["AeropuertoLlegada"], Convert.ToDouble(Lector["Precio"]), Convert.ToInt32(Lector["CantAsientos"]));
+                        unV = new Vuelo((string)Lector["CodigoV"], Convert.ToDateTime(Lector["FechaYHoraSalida"]), Convert.ToDateTime(Lector["FechaYHoraLlegada"]),PersistenciaAeropuerto.GetInstancia().BuscarAeropuertoTodos((string)Lector["AeropuertoPartida"]), PersistenciaAeropuerto.GetInstancia().BuscarAeropuertoTodos((string)Lector["AeropuertoLlegada"]), Convert.ToDouble(Lector["Precio"]), Convert.ToInt32(Lector["CantAsientos"]));
                         Lista.Add(unV);
                     }
                 }
