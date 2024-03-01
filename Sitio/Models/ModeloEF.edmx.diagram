@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c7e35e067dc0491f8eec2c32bb87b840" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="ProyectoFinalEF.Aeropuerto" Width="1.5" PointX="1.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalEF.Ciudad" Width="1.5" PointX="1.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalEF.Cliente" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalEF.Empleado" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalEF.Pasaje" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalEF.Venta" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalEF.Vuelo" Width="1.5" PointX="3.75" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="ProyectoFinalEF.FK__Aeropuert__Codig__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalEF.FK__Vuelo__Aeropuert__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalEF.FK__Vuelo__Aeropuert__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalEF.FK__Pasaje__NroPasap__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalEF.FK__Venta__NroPasapo__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalEF.FK__Venta__Usuario__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalEF.FK__Pasaje__IdVenta__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalEF.FK__Venta__CodigoV__5165187F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
