@@ -127,16 +127,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\ModeloEF.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloEF.edmx</DependentUpon>
-      <LastGenOutput>ModeloEF.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ModeloEF.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloEF.edmx</DependentUpon>
-      <LastGenOutput>ModeloEF.cs</LastGenOutput>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -145,42 +135,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Models\Aeropuerto.cs">
-      <DependentUpon>ModeloEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Ciudad.cs">
-      <DependentUpon>ModeloEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Cliente.cs">
-      <DependentUpon>ModeloEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Empleado.cs">
-      <DependentUpon>ModeloEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModeloEF.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloEF.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModeloEF.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModeloEF.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloEF.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Pasaje.cs">
-      <DependentUpon>ModeloEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Venta.cs">
-      <DependentUpon>ModeloEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Vuelo.cs">
-      <DependentUpon>ModeloEF.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,13 +146,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\ModeloEF.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModeloEF.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ModeloEF.edmx.diagram">
-      <DependentUpon>ModeloEF.edmx</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -208,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

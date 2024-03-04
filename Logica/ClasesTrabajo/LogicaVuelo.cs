@@ -20,7 +20,7 @@ namespace Logica
         }
         public void Alta(Vuelo unV, Empleado pUsu)
         {
-            if (unV.FechaHoraSalida < DateTime.Now)
+            if (unV.FechaHoraSalida >= DateTime.Now)
             {
                 FabricaPersistencia.GetPersistenciaVuelo().Alta(unV, pUsu);
             }

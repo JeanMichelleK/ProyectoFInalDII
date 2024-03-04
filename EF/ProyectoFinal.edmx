@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProyectoFinalEF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ProyectoFinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Aeropuerto">
           <Key>
             <PropertyRef Name="CodigoA" />
@@ -77,7 +77,7 @@
           <Property Name="Precio" Type="money" Nullable="false" />
           <Property Name="CantAsientos" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Aeropuert__Codig__3E52440B">
+        <Association Name="FK__Aeropuert__Codig__09DE7BCC">
           <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
           <End Role="Aeropuerto" Type="Self.Aeropuerto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -89,7 +89,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pasaje__IdVenta__5812160E">
+        <Association Name="FK__Pasaje__IdVenta__2D27B809">
           <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
           <End Role="Pasaje" Type="Self.Pasaje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -101,7 +101,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pasaje__NroPasap__571DF1D5">
+        <Association Name="FK__Pasaje__NroPasap__2C3393D0">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Pasaje" Type="Self.Pasaje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -113,7 +113,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__CodigoV__5165187F">
+        <Association Name="FK__Venta__CodigoV__24927208">
           <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -125,7 +125,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__NroPasapo__5070F446">
+        <Association Name="FK__Venta__NroPasapo__239E4DCF">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -137,7 +137,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__Usuario__5441852A">
+        <Association Name="FK__Venta__Usuario__276EDEB3">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -149,7 +149,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vuelo__Aeropuert__440B1D61">
+        <Association Name="FK__Vuelo__Aeropuert__117F9D94">
           <End Role="Aeropuerto" Type="Self.Aeropuerto" Multiplicity="1" />
           <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -161,7 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vuelo__Aeropuert__44FF419A">
+        <Association Name="FK__Vuelo__Aeropuert__1273C1CD">
           <End Role="Aeropuerto" Type="Self.Aeropuerto" Multiplicity="1" />
           <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -173,7 +173,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProyectoFinalEFStoreContainer">
+        <EntityContainer Name="ProyectoFinalModelStoreContainer">
           <EntitySet Name="Aeropuerto" EntityType="Self.Aeropuerto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ciudad" EntityType="Self.Ciudad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
@@ -181,35 +181,35 @@
           <EntitySet Name="Pasaje" EntityType="Self.Pasaje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vuelo" EntityType="Self.Vuelo" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Aeropuert__Codig__3E52440B" Association="Self.FK__Aeropuert__Codig__3E52440B">
+          <AssociationSet Name="FK__Aeropuert__Codig__09DE7BCC" Association="Self.FK__Aeropuert__Codig__09DE7BCC">
             <End Role="Ciudad" EntitySet="Ciudad" />
             <End Role="Aeropuerto" EntitySet="Aeropuerto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pasaje__IdVenta__5812160E" Association="Self.FK__Pasaje__IdVenta__5812160E">
+          <AssociationSet Name="FK__Pasaje__IdVenta__2D27B809" Association="Self.FK__Pasaje__IdVenta__2D27B809">
             <End Role="Venta" EntitySet="Venta" />
             <End Role="Pasaje" EntitySet="Pasaje" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pasaje__NroPasap__571DF1D5" Association="Self.FK__Pasaje__NroPasap__571DF1D5">
+          <AssociationSet Name="FK__Pasaje__NroPasap__2C3393D0" Association="Self.FK__Pasaje__NroPasap__2C3393D0">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Pasaje" EntitySet="Pasaje" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__CodigoV__5165187F" Association="Self.FK__Venta__CodigoV__5165187F">
+          <AssociationSet Name="FK__Venta__CodigoV__24927208" Association="Self.FK__Venta__CodigoV__24927208">
             <End Role="Vuelo" EntitySet="Vuelo" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__NroPasapo__5070F446" Association="Self.FK__Venta__NroPasapo__5070F446">
+          <AssociationSet Name="FK__Venta__NroPasapo__239E4DCF" Association="Self.FK__Venta__NroPasapo__239E4DCF">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__Usuario__5441852A" Association="Self.FK__Venta__Usuario__5441852A">
+          <AssociationSet Name="FK__Venta__Usuario__276EDEB3" Association="Self.FK__Venta__Usuario__276EDEB3">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vuelo__Aeropuert__440B1D61" Association="Self.FK__Vuelo__Aeropuert__440B1D61">
+          <AssociationSet Name="FK__Vuelo__Aeropuert__117F9D94" Association="Self.FK__Vuelo__Aeropuert__117F9D94">
             <End Role="Aeropuerto" EntitySet="Aeropuerto" />
             <End Role="Vuelo" EntitySet="Vuelo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vuelo__Aeropuert__44FF419A" Association="Self.FK__Vuelo__Aeropuert__44FF419A">
+          <AssociationSet Name="FK__Vuelo__Aeropuert__1273C1CD" Association="Self.FK__Vuelo__Aeropuert__1273C1CD">
             <End Role="Aeropuerto" EntitySet="Aeropuerto" />
             <End Role="Vuelo" EntitySet="Vuelo" />
           </AssociationSet>
@@ -218,7 +218,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ProyectoFinalEF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ProyectoFinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Aeropuerto">
           <Key>
             <PropertyRef Name="CodigoA" />
@@ -230,9 +230,7 @@
           <Property Name="ImpuestoL" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="CodigoC" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Ciudad" Relationship="Self.FK__Aeropuert__Codig__3E52440B" FromRole="Aeropuerto" ToRole="Ciudad" />
-          <NavigationProperty Name="Vuelo" Relationship="Self.FK__Vuelo__Aeropuert__440B1D61" FromRole="Aeropuerto" ToRole="Vuelo" />
-          <NavigationProperty Name="Vuelo1" Relationship="Self.FK__Vuelo__Aeropuert__44FF419A" FromRole="Aeropuerto" ToRole="Vuelo" />
+          <NavigationProperty Name="Ciudad" Relationship="Self.FK__Aeropuert__Codig__09DE7BCC" FromRole="Aeropuerto" ToRole="Ciudad" />
         </EntityType>
         <EntityType Name="Ciudad">
           <Key>
@@ -242,7 +240,6 @@
           <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Pais" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Aeropuerto" Relationship="Self.FK__Aeropuert__Codig__3E52440B" FromRole="Ciudad" ToRole="Aeropuerto" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -253,8 +250,6 @@
           <Property Name="PassCli" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NroTarjeta" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Pasaje" Relationship="Self.FK__Pasaje__NroPasap__571DF1D5" FromRole="Cliente" ToRole="Pasaje" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__NroPasapo__5070F446" FromRole="Cliente" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
@@ -264,7 +259,6 @@
           <Property Name="PassUsu" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NombreCompleto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Labor" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__Usuario__5441852A" FromRole="Empleado" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Pasaje">
           <Key>
@@ -274,8 +268,8 @@
           <Property Name="NroPasaporte" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IdVenta" Type="Int32" Nullable="false" />
           <Property Name="Asiento" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK__Pasaje__NroPasap__571DF1D5" FromRole="Pasaje" ToRole="Cliente" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Pasaje__IdVenta__5812160E" FromRole="Pasaje" ToRole="Venta" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Pasaje__NroPasap__2C3393D0" FromRole="Pasaje" ToRole="Cliente" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Pasaje__IdVenta__2D27B809" FromRole="Pasaje" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -287,10 +281,10 @@
           <Property Name="FechaVenta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Monto" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK__Venta__NroPasapo__5070F446" FromRole="Venta" ToRole="Cliente" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK__Venta__Usuario__5441852A" FromRole="Venta" ToRole="Empleado" />
-          <NavigationProperty Name="Pasaje" Relationship="Self.FK__Pasaje__IdVenta__5812160E" FromRole="Venta" ToRole="Pasaje" />
-          <NavigationProperty Name="Vuelo" Relationship="Self.FK__Venta__CodigoV__5165187F" FromRole="Venta" ToRole="Vuelo" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Venta__NroPasapo__239E4DCF" FromRole="Venta" ToRole="Cliente" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Venta__Usuario__276EDEB3" FromRole="Venta" ToRole="Empleado" />
+          <NavigationProperty Name="Pasaje" Relationship="Self.FK__Pasaje__IdVenta__2D27B809" FromRole="Venta" ToRole="Pasaje" />
+          <NavigationProperty Name="Vuelo" Relationship="Self.FK__Venta__CodigoV__24927208" FromRole="Venta" ToRole="Vuelo" />
         </EntityType>
         <EntityType Name="Vuelo">
           <Key>
@@ -303,11 +297,11 @@
           <Property Name="AeropuertoPartida" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="CantAsientos" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Aeropuerto" Relationship="Self.FK__Vuelo__Aeropuert__440B1D61" FromRole="Vuelo" ToRole="Aeropuerto" />
-          <NavigationProperty Name="Aeropuerto1" Relationship="Self.FK__Vuelo__Aeropuert__44FF419A" FromRole="Vuelo" ToRole="Aeropuerto" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__CodigoV__5165187F" FromRole="Vuelo" ToRole="Venta" />
+          <NavigationProperty Name="Aeropuerto" Relationship="Self.FK__Vuelo__Aeropuert__117F9D94" FromRole="Vuelo" ToRole="Aeropuerto" />
+          <NavigationProperty Name="Aeropuerto1" Relationship="Self.FK__Vuelo__Aeropuert__1273C1CD" FromRole="Vuelo" ToRole="Aeropuerto" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__CodigoV__24927208" FromRole="Vuelo" ToRole="Venta" />
         </EntityType>
-        <Association Name="FK__Aeropuert__Codig__3E52440B">
+        <Association Name="FK__Aeropuert__Codig__09DE7BCC">
           <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
           <End Role="Aeropuerto" Type="Self.Aeropuerto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -319,7 +313,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vuelo__Aeropuert__440B1D61">
+        <Association Name="FK__Vuelo__Aeropuert__117F9D94">
           <End Role="Aeropuerto" Type="Self.Aeropuerto" Multiplicity="1" />
           <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -331,7 +325,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vuelo__Aeropuert__44FF419A">
+        <Association Name="FK__Vuelo__Aeropuert__1273C1CD">
           <End Role="Aeropuerto" Type="Self.Aeropuerto" Multiplicity="1" />
           <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -343,7 +337,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pasaje__NroPasap__571DF1D5">
+        <Association Name="FK__Pasaje__NroPasap__2C3393D0">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Pasaje" Type="Self.Pasaje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -355,7 +349,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__NroPasapo__5070F446">
+        <Association Name="FK__Venta__NroPasapo__239E4DCF">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -367,7 +361,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__Usuario__5441852A">
+        <Association Name="FK__Venta__Usuario__276EDEB3">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -379,7 +373,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pasaje__IdVenta__5812160E">
+        <Association Name="FK__Pasaje__IdVenta__2D27B809">
           <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
           <End Role="Pasaje" Type="Self.Pasaje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -391,7 +385,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__CodigoV__5165187F">
+        <Association Name="FK__Venta__CodigoV__24927208">
           <End Role="Vuelo" Type="Self.Vuelo" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -403,7 +397,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProyectoFEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProyectoFinalEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Aeropuerto" EntityType="Self.Aeropuerto" />
           <EntitySet Name="Ciudad" EntityType="Self.Ciudad" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
@@ -411,35 +405,35 @@
           <EntitySet Name="Pasaje" EntityType="Self.Pasaje" />
           <EntitySet Name="Venta" EntityType="Self.Venta" />
           <EntitySet Name="Vuelo" EntityType="Self.Vuelo" />
-          <AssociationSet Name="FK__Aeropuert__Codig__3E52440B" Association="Self.FK__Aeropuert__Codig__3E52440B">
+          <AssociationSet Name="FK__Aeropuert__Codig__09DE7BCC" Association="Self.FK__Aeropuert__Codig__09DE7BCC">
             <End Role="Ciudad" EntitySet="Ciudad" />
             <End Role="Aeropuerto" EntitySet="Aeropuerto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vuelo__Aeropuert__440B1D61" Association="Self.FK__Vuelo__Aeropuert__440B1D61">
+          <AssociationSet Name="FK__Vuelo__Aeropuert__117F9D94" Association="Self.FK__Vuelo__Aeropuert__117F9D94">
             <End Role="Aeropuerto" EntitySet="Aeropuerto" />
             <End Role="Vuelo" EntitySet="Vuelo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vuelo__Aeropuert__44FF419A" Association="Self.FK__Vuelo__Aeropuert__44FF419A">
+          <AssociationSet Name="FK__Vuelo__Aeropuert__1273C1CD" Association="Self.FK__Vuelo__Aeropuert__1273C1CD">
             <End Role="Aeropuerto" EntitySet="Aeropuerto" />
             <End Role="Vuelo" EntitySet="Vuelo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pasaje__NroPasap__571DF1D5" Association="Self.FK__Pasaje__NroPasap__571DF1D5">
+          <AssociationSet Name="FK__Pasaje__NroPasap__2C3393D0" Association="Self.FK__Pasaje__NroPasap__2C3393D0">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Pasaje" EntitySet="Pasaje" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__NroPasapo__5070F446" Association="Self.FK__Venta__NroPasapo__5070F446">
+          <AssociationSet Name="FK__Venta__NroPasapo__239E4DCF" Association="Self.FK__Venta__NroPasapo__239E4DCF">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__Usuario__5441852A" Association="Self.FK__Venta__Usuario__5441852A">
+          <AssociationSet Name="FK__Venta__Usuario__276EDEB3" Association="Self.FK__Venta__Usuario__276EDEB3">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pasaje__IdVenta__5812160E" Association="Self.FK__Pasaje__IdVenta__5812160E">
+          <AssociationSet Name="FK__Pasaje__IdVenta__2D27B809" Association="Self.FK__Pasaje__IdVenta__2D27B809">
             <End Role="Venta" EntitySet="Venta" />
             <End Role="Pasaje" EntitySet="Pasaje" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__CodigoV__5165187F" Association="Self.FK__Venta__CodigoV__5165187F">
+          <AssociationSet Name="FK__Venta__CodigoV__24927208" Association="Self.FK__Venta__CodigoV__24927208">
             <End Role="Vuelo" EntitySet="Vuelo" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
@@ -449,9 +443,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProyectoFinalEFStoreContainer" CdmEntityContainer="ProyectoFEntities">
+        <EntityContainerMapping StorageEntityContainer="ProyectoFinalModelStoreContainer" CdmEntityContainer="ProyectoFinalEntities">
           <EntitySetMapping Name="Aeropuerto">
-            <EntityTypeMapping TypeName="ProyectoFinalEF.Aeropuerto">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Aeropuerto">
               <MappingFragment StoreEntitySet="Aeropuerto">
                 <ScalarProperty Name="CodigoA" ColumnName="CodigoA" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -464,7 +458,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Ciudad">
-            <EntityTypeMapping TypeName="ProyectoFinalEF.Ciudad">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Ciudad">
               <MappingFragment StoreEntitySet="Ciudad">
                 <ScalarProperty Name="CodigoC" ColumnName="CodigoC" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -474,7 +468,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cliente">
-            <EntityTypeMapping TypeName="ProyectoFinalEF.Cliente">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
                 <ScalarProperty Name="NroPasaporte" ColumnName="NroPasaporte" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -485,7 +479,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empleado">
-            <EntityTypeMapping TypeName="ProyectoFinalEF.Empleado">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Empleado">
               <MappingFragment StoreEntitySet="Empleado">
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="PassUsu" ColumnName="PassUsu" />
@@ -495,7 +489,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pasaje">
-            <EntityTypeMapping TypeName="ProyectoFinalEF.Pasaje">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Pasaje">
               <MappingFragment StoreEntitySet="Pasaje">
                 <ScalarProperty Name="NroPasaporte" ColumnName="NroPasaporte" />
                 <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
@@ -504,7 +498,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Venta">
-            <EntityTypeMapping TypeName="ProyectoFinalEF.Venta">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Venta">
               <MappingFragment StoreEntitySet="Venta">
                 <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
                 <ScalarProperty Name="NroPasaporte" ColumnName="NroPasaporte" />
@@ -516,7 +510,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vuelo">
-            <EntityTypeMapping TypeName="ProyectoFinalEF.Vuelo">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Vuelo">
               <MappingFragment StoreEntitySet="Vuelo">
                 <ScalarProperty Name="CodigoV" ColumnName="CodigoV" />
                 <ScalarProperty Name="FechaYHoraSalida" ColumnName="FechaYHoraSalida" />
@@ -545,7 +539,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
