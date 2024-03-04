@@ -50,7 +50,7 @@ namespace Persistencia
 
         public Empleado Logueo(string pUsu, string pPass)
         {
-            SqlConnection _cnn = new SqlConnection(Conexion.Cnn);
+            SqlConnection _cnn = new SqlConnection(Conexion.Cnn());
             Empleado unE = null;
             SqlCommand Comando = new SqlCommand("LogueoEmpleado", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;

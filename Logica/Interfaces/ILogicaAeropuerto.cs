@@ -13,6 +13,6 @@ namespace Logica
         void Modificar(Aeropuerto unA, Empleado pUsu);
         void Baja(Aeropuerto unA, Empleado pUsu);
         Aeropuerto Buscar(string pCodigoA, Empleado pUsu);
-        List<Aeropuerto> ListadoAeropuerto(Empleado pUsu);
+        List<Aeropuerto> ListadoAeropuertos(Empleado pUsu);
     }
 }

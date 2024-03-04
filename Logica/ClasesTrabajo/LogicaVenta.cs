@@ -20,7 +20,7 @@ namespace Logica
         }
         public void Alta(Venta unaV, Empleado pUsu)
         {
-            FabricaPersistencia.GetPersistenciaVenta().Alta(unaV, Empleado pUsu);
+            FabricaPersistencia.GetPersistenciaVenta().Alta(unaV, pUsu);
         }
         public List<Venta> VentaVuelo(Vuelo unV, Empleado pUsu)
         {

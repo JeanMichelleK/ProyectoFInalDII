@@ -269,7 +269,6 @@
           <Property Name="IdVenta" Type="Int32" Nullable="false" />
           <Property Name="Asiento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK__Pasaje__NroPasap__2C3393D0" FromRole="Pasaje" ToRole="Cliente" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Pasaje__IdVenta__2D27B809" FromRole="Pasaje" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -299,7 +298,6 @@
           <Property Name="CantAsientos" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Aeropuerto" Relationship="Self.FK__Vuelo__Aeropuert__117F9D94" FromRole="Vuelo" ToRole="Aeropuerto" />
           <NavigationProperty Name="Aeropuerto1" Relationship="Self.FK__Vuelo__Aeropuert__1273C1CD" FromRole="Vuelo" ToRole="Aeropuerto" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__CodigoV__24927208" FromRole="Vuelo" ToRole="Venta" />
         </EntityType>
         <Association Name="FK__Aeropuert__Codig__09DE7BCC">
           <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />

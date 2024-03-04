@@ -1,0 +1,41 @@
+﻿@model EC.Ciudad
+
+@{
+    ViewBag.Title = "FormCiudadConsultar";
+}
+
+<h2>Detalles de la Ciudad</h2>
+
+@ViewBag.Mensaje
+
+<div>
+
+    @Html.ActionLink("Volver al listado","FormCiudadListar")
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+    </dl>
+</div>
