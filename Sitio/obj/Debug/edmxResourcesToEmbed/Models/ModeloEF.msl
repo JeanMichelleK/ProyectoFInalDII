@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoFinalEFStoreContainer" CdmEntityContainer="ProyectoFEntities">
+    <EntitySetMapping Name="Aeropuerto">
+      <EntityTypeMapping TypeName="ProyectoFinalEF.Aeropuerto">
+        <MappingFragment StoreEntitySet="Aeropuerto">
+          <ScalarProperty Name="CodigoA" ColumnName="CodigoA" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="ImpuestoS" ColumnName="ImpuestoS" />
+          <ScalarProperty Name="ImpuestoL" ColumnName="ImpuestoL" />
+          <ScalarProperty Name="CodigoC" ColumnName="CodigoC" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudad">
+      <EntityTypeMapping TypeName="ProyectoFinalEF.Ciudad">
+        <MappingFragment StoreEntitySet="Ciudad">
+          <ScalarProperty Name="CodigoC" ColumnName="CodigoC" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="ProyectoFinalEF.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="NroPasaporte" ColumnName="NroPasaporte" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PassCli" ColumnName="PassCli" />
+          <ScalarProperty Name="NroTarjeta" ColumnName="NroTarjeta" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="ProyectoFinalEF.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="PassUsu" ColumnName="PassUsu" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Labor" ColumnName="Labor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pasaje">
+      <EntityTypeMapping TypeName="ProyectoFinalEF.Pasaje">
+        <MappingFragment StoreEntitySet="Pasaje">
+          <ScalarProperty Name="NroPasaporte" ColumnName="NroPasaporte" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+          <ScalarProperty Name="Asiento" ColumnName="Asiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta">
+      <EntityTypeMapping TypeName="ProyectoFinalEF.Venta">
+        <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+          <ScalarProperty Name="NroPasaporte" ColumnName="NroPasaporte" />
+          <ScalarProperty Name="CodigoV" ColumnName="CodigoV" />
+          <ScalarProperty Name="FechaVenta" ColumnName="FechaVenta" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vuelo">
+      <EntityTypeMapping TypeName="ProyectoFinalEF.Vuelo">
+        <MappingFragment StoreEntitySet="Vuelo">
+          <ScalarProperty Name="CodigoV" ColumnName="CodigoV" />
+          <ScalarProperty Name="FechaYHoraSalida" ColumnName="FechaYHoraSalida" />
+          <ScalarProperty Name="FechaYHoraLlegada" ColumnName="FechaYHoraLlegada" />
+          <ScalarProperty Name="AeropuertoLlegada" ColumnName="AeropuertoLlegada" />
+          <ScalarProperty Name="AeropuertoPartida" ColumnName="AeropuertoPartida" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="CantAsientos" ColumnName="CantAsientos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
