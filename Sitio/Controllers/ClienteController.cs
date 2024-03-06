@@ -15,7 +15,7 @@ namespace Sitio.Controllers
         {
             try
             {
-                List<Cliente> Lista = FabricaLogica.GetLogicaCliente().Buscar((Empleado)Session["Usuario"]);
+                List<Cliente> Lista = FabricaLogica.GetLogicaCliente().ListadoClientes((Empleado)Session["Usuario"]);
                 if (Lista.Count >= 1)
                 {
                     if (String.IsNullOrEmpty(DatoFiltro))
@@ -48,7 +48,7 @@ namespace Sitio.Controllers
             try
             {
                 C.Validar();
-                FabricaLogica.GetLogicaCliente().Alta((Empleado)Session["Usuario"]);
+                FabricaLogica.GetLogicaCliente().Alta(C,(Empleado)Session["Usuario"]);
                 return RedirectToAction("FormClienteListar", "Cliente");
             }
             catch (Exception ex)
