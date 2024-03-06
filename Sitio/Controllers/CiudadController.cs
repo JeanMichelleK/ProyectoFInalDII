@@ -22,13 +22,14 @@ namespace Sitio.Controllers
                     else
                     {
                         Lista = (from unC in Lista
-                                 where unC.NombreToUpper().StartsWith(DatoFiltro.ToUpper())
+                                 where unC.Nombre.ToUpper().StartsWith(DatoFiltro.ToUpper())
                                  select unC).ToList();
                         return View(Lista);
                     }
                 }
                 else
                     throw new Exception("No hay ciudades para mostrar.");
+            }
             catch (Exception ex)
             {
                 ViewBag.Mensaje = ex.Message;
