@@ -145,9 +145,5 @@ namespace Sitio.Controllers
                 return View(new Aeropuerto());
             }
         }
-
-
-
-        int hola = 0; 
     }
 }
