@@ -155,6 +155,7 @@
     <Compile Include="Controllers\AeropuertoController.cs" />
     <Compile Include="Controllers\CiudadController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +181,8 @@
     <Content Include="Views\Cliente\FormClienteModificar.cshtml" />
     <Content Include="Views\Cliente\FormClienteBaja.cshtml" />
     <Content Include="Views\Cliente\FormClienteConsultar.cshtml" />
+    <Content Include="Views\Empleado\FormLogueo.cshtml" />
+    <Content Include="Views\Home\PaginaMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
