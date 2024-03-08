@@ -12,8 +12,7 @@ namespace Sitio.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
+            Session["Usuario"] = null;
             return View();
         }
 

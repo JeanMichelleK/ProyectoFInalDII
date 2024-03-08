@@ -34,7 +34,7 @@ namespace Sitio.Controllers
             catch (Exception ex)
             {
                 ViewBag.Mensaje = ex.Message;
-                return ViewBag(new List<Cliente>());
+                return View(new List<Cliente>());
             }
         }
         [HttpGet]
