@@ -5,6 +5,5 @@ C:\Users\pitum\ProyectoFInalDII\EF\bin\Debug\EntityFramework.dll
 C:\Users\pitum\ProyectoFInalDII\EF\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\pitum\ProyectoFInalDII\EF\bin\Debug\EntityFramework.xml
 C:\Users\pitum\ProyectoFInalDII\EF\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\pitum\ProyectoFInalDII\EF\obj\Debug\EF.csprojResolveAssemblyReference.cache
 C:\Users\pitum\ProyectoFInalDII\EF\obj\Debug\EF.dll
 C:\Users\pitum\ProyectoFInalDII\EF\obj\Debug\EF.pdb

@@ -9,17 +9,20 @@
 @ViewBag.Mensaje
 
 <p>
-    @Html.ActionLink("Nueva", "FormCiudadNueva")
+    @Html.ActionLink("Nueva", "FormCiudadNueva") |
     @Html.ActionLink("Volver","PaginaMenu","Home")
 </p>
 
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
-    <div class="form-actions no-color">
-        @Html.TextBox("DatoFiltro")
-        <input type="submit" value="Filtrar" class="btn btn-default" />
-    </div>
+
+    <table>
+        <tr>
+            <td>Nombre: @Html.TextBox("DatoFiltro","")</td>
+            <td><input type="submit" value="Filtrar" class="btn btn-default"/></td>
+            <td>@Html.ActionLink("Limpiar","FormCiudadListar",null,new { @class = "btn btn-default" })</td>
+        </tr>
+    </table>
 }
 
 <table class="table">
@@ -54,5 +57,4 @@
         </td>
     </tr>
 }
-
 </table>

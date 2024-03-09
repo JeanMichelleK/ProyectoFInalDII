@@ -15,26 +15,22 @@ namespace Sitio.Controllers
             try
             {
                 List<Ciudad> Lista = FabricaLogica.GetLogicaCiudad().ListadoCiudades((Empleado)Session["Usuario"]);
-                if (Lista.Count >= 1)
+                if (Lista.Count == 0)
+                    throw new Exception("No hay facturas para mostrar");
+
+                if (!String.IsNullOrEmpty(DatoFiltro))
                 {
-                    if (String.IsNullOrEmpty(DatoFiltro))
-                        return View(Lista);
-                    else
-                    {
-                        Lista = (from unC in Lista
-                                 where unC.Nombre.ToUpper().StartsWith(DatoFiltro.ToUpper())
-                                 select unC).ToList();
-                        return View(Lista);
-                    }
+                    Lista = (from unC in Lista
+                             where unC.Nombre.ToUpper().StartsWith(DatoFiltro.ToUpper())
+                             select unC).ToList();
                 }
-                else
-                    throw new Exception("No hay ciudades para mostrar.");
+                return View(Lista);
             }
             catch (Exception ex)
             {
                 ViewBag.Mensaje = ex.Message;
                 return View(new List<Ciudad>());
-            }         
+            }
         }
 
         [HttpGet]
@@ -141,9 +137,5 @@ namespace Sitio.Controllers
                 return View(new Ciudad());
             }
         }
-
-
-
-
     }
 }
