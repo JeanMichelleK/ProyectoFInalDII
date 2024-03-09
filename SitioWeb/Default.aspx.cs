@@ -72,13 +72,13 @@ public partial class _Default : System.Web.UI.Page
             }
             List<object> ListaVP = (from unV in ListaV
                                     orderby unV.FechaYHoraSalida
-                                    where unV.Aeropuerto.Nombre == ddlAeropuerto.SelectedValue && unV.FechaYHoraSalida > DateTime.Now
+                                    where unV.Aeropuerto1.Nombre == ddlAeropuerto.SelectedValue && unV.FechaYHoraSalida > DateTime.Now
                                     select new
                                     {
                                         FechaYHoraPartida = unV.FechaYHoraSalida,
-                                        Destino = unV.Aeropuerto1.Nombre,
-                                        Ciudad = unV.Aeropuerto1.Ciudad.Nombre,
-                                        Pais = unV.Aeropuerto1.Ciudad.Pais,
+                                        Destino = unV.Aeropuerto.Nombre,
+                                        Ciudad = unV.Aeropuerto.Ciudad.Nombre,
+                                        Pais = unV.Aeropuerto.Ciudad.Pais,
                                         PasajesVendidos = unV.Venta.Count
                                    }).ToList<object>();
             if (ListaVP.Count == 0)
@@ -88,13 +88,13 @@ public partial class _Default : System.Web.UI.Page
 
             List<object> ListaVA = (from unV in ListaV
                                     orderby unV.FechaYHoraSalida
-                                    where unV.Aeropuerto1.Nombre == ddlAeropuerto.SelectedValue && unV.FechaYHoraLlegada > DateTime.Now
+                                    where unV.Aeropuerto.Nombre == ddlAeropuerto.SelectedValue && unV.FechaYHoraLlegada > DateTime.Now
                                     select new
                                     {
                                         FechaYHoraLlegada = unV.FechaYHoraLlegada,
-                                        Partida = unV.Aeropuerto.Nombre,
-                                        Ciudad = unV.Aeropuerto.Ciudad.Nombre,
-                                        Pais = unV.Aeropuerto.Ciudad.Pais,
+                                        Partida = unV.Aeropuerto1.Nombre,
+                                        Ciudad = unV.Aeropuerto1.Ciudad.Nombre,
+                                        Pais = unV.Aeropuerto1.Ciudad.Pais,
                                         PasajesVendidos = unV.Venta.Count
                                     }).ToList<object>();
             if (ListaVA.Count == 0)
