@@ -18,15 +18,20 @@
     
         <br />
         <span class="auto-style1"><strong>Compras:</strong></span><br />
-        <asp:GridView ID="GridView1" runat="server" Width="645px">
+        <asp:GridView ID="gvCompras" runat="server" Width="645px" AutoGenerateColumns="False" style="text-align: center">
             <Columns>
+                <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+                <asp:BoundField DataField="Vuelo" HeaderText="Vuelo" />
+                <asp:BoundField DataField="Monto" HeaderText="Monto" />
+                <asp:BoundField DataField="Empleado" HeaderText="Empleado" />
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
         <br />
+        <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
         <strong><span class="auto-style1">Datos:</span></strong><br />
-        <asp:GridView ID="GridView2" runat="server" Width="642px">
+        <asp:GridView ID="gvDatos" runat="server" Width="642px" Height="39px" style="text-align: center">
         </asp:GridView>
     
     </div>

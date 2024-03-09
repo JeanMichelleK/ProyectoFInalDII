@@ -39,7 +39,7 @@ namespace EC
             Cliente = _Cliente;
             Asiento = _asiento;
         }
-        private void Validar()
+        public void Validar()
         {
             if (this.Cliente == null)
                 throw new Exception("Se debe saber a quien le pertenece el pasaje.");
