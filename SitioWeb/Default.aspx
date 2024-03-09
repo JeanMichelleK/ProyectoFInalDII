@@ -21,6 +21,9 @@
         .auto-style5 {
             font-size: large;
         }
+        .auto-style6 {
+            color: #FF0000;
+        }
     </style>
 </head>
 <body>
@@ -43,22 +46,41 @@
         <br />
         </span>
         <br />
-        <asp:DropDownList ID="DropDownList1" runat="server">
+        <asp:DropDownList ID="ddlAeropuerto" runat="server">
         </asp:DropDownList>
+        &nbsp;&nbsp;
+        <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
+        <br />
+        <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
         <br />
         Partidas<br />
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="gvPartidas" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="FechaYHoraPartida" HeaderText="Fecha Y Hora" />
+                <asp:BoundField DataField="Destino" HeaderText="Destino" />
+                <asp:BoundField DataField="Ciudad" HeaderText="Ciudad" />
+                <asp:BoundField DataField="Pais" HeaderText="Pais" />
+                <asp:BoundField DataField="PasajesVendidos" HeaderText="Pasajes Vendidos" />
+            </Columns>
         </asp:GridView>
+        <asp:Label ID="lblError2" runat="server" CssClass="auto-style6"></asp:Label>
         <br />
         <br />
         Arribos
         <br />
         <br />
-        <asp:GridView ID="GridView2" runat="server">
+        <asp:GridView ID="gvArribos" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="FechaYHoraLlegada" HeaderText="Fecha Y Hora " />
+                <asp:BoundField DataField="Partida" HeaderText="Partida" />
+                <asp:BoundField DataField="Ciudad" HeaderText="Ciudad" />
+                <asp:BoundField DataField="Pais" HeaderText="Pais" />
+                <asp:BoundField DataField="PasajesVendidos" HeaderText="Pasajes Vendidos" />
+            </Columns>
         </asp:GridView>
         <br />
-        <asp:Label ID="lblError" runat="server"></asp:Label>
+        <asp:Label ID="lblError3" runat="server" CssClass="auto-style6"></asp:Label>
         <br />
         <br />
     
