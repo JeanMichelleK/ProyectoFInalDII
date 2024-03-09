@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EC.Ciudad>
+
+@{
+    ViewBag.Title = "FormCiudadListar";
+}
+
+<h2>Listado Ciudad</h2>
+
+@ViewBag.Mensaje
+
+<p>
+    @Html.ActionLink("Nueva", "FormCiudadNueva")
+    @Html.ActionLink("Volver","Principal","Home")
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        @Html.TextBox("DatoFiltro")
+        <input type="submit" value="Filtrar" class="btn btn-default" />
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (EC.Ciudad item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "FormCiudadModificar", new { item.CodigoCiudad }) |
+            @Html.ActionLink("Consultar", "FormCiudadConsultar", new { item.CodigoCiudad}) |
+            @Html.ActionLink("Eliminar", "FormCiudadBaja", new {item.CodigoCiudad })
+        </td>
+    </tr>
+}
+
+</table>

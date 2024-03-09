@@ -33,7 +33,7 @@ namespace Sitio.Controllers
             catch (Exception ex)
             {
                 ViewBag.Mensaje = ex.Message;
-                return ViewBag(new List<Ciudad>());
+                return View(new List<Ciudad>());
             }         
         }
 

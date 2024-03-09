@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EC;
+using Logica;
 
 namespace Sitio.Controllers
 {
@@ -10,9 +12,16 @@ namespace Sitio.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
+            Session["Usuario"] = null;
             return View();
+        }
+
+        public ActionResult PaginaMenu()
+        {
+            if (Session["Usuario"] is Empleado)
+                return View();
+            else
+                return RedirectToAction("FormLogueo", "Empleado");
         }
     }
 }

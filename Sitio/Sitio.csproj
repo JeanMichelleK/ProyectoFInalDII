@@ -137,6 +137,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\ProyectoMVC.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -155,7 +156,10 @@
     <Compile Include="Controllers\AeropuertoController.cs" />
     <Compile Include="Controllers\CiudadController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VentaController.cs" />
+    <Compile Include="Controllers\VueloController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,11 +179,24 @@
     <Content Include="Views\Ciudad\FormCiudadBaja.cshtml" />
     <Content Include="Views\Ciudad\FormCiudadConsultar.cshtml" />
     <Content Include="Views\Ciudad\FormCiudadListar.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Aeropuerto\FormAeropuertoNuevo.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoModificar.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoBaja.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoConsultar.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoListar.cshtml" />
+=======
+    <Content Include="Views\Cliente\FormClienteListar.cshtml" />
+    <Content Include="Views\Cliente\FormClienteNuevo.cshtml" />
+    <Content Include="Views\Cliente\FormClienteModificar.cshtml" />
+    <Content Include="Views\Cliente\FormClienteBaja.cshtml" />
+    <Content Include="Views\Cliente\FormClienteConsultar.cshtml" />
+    <Content Include="Views\Home\PaginaMenu.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Empleado\FormLogueo.cshtml" />
+    <Content Include="Views\Vuelo\FormVueloAlta.cshtml" />
+>>>>>>> 6c641a22bd8b1a8cf92577715b83f169db3ad2d1
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,6 +207,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Venta\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

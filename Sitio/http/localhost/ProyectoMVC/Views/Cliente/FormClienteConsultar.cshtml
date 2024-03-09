@@ -1,0 +1,50 @@
+﻿@model EC.Cliente
+
+@{
+    ViewBag.Title = "FormClienteConsultar";
+}
+
+<h2>Detalles del Cliente</h2>
+
+@ViewBag.Mensaje
+
+<div>
+
+    @Html.ActionLink("Volver al listado","FormClienteListar")
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NroPasaporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NroPasaporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassCli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassCli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NroTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NroTarjeta)
+        </dd>
+
+    </dl>
+</div>

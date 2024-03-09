@@ -168,7 +168,7 @@ namespace Persistencia
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Cliente unC = null;
             List<Cliente> Lista = new List<Cliente>();
-            SqlCommand Comando = new SqlCommand("ListarCliente", _cnn);
+            SqlCommand Comando = new SqlCommand("ListarClientes", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             try
             {

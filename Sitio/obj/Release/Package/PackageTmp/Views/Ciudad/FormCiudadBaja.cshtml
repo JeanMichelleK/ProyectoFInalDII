@@ -1,0 +1,47 @@
+﻿@model EC.Ciudad
+
+@{
+    ViewBag.Title = "FormCiudadBaja";
+}
+
+@ViewBag.Mensaje
+
+<h3>¿Esta seguro que desea eliminar esta ciudad?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al listado", "FormCiudadListar")
+        </div>
+    }
+</div>

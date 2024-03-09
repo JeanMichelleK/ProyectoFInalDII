@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EC.Cliente>
+
+@{
+    ViewBag.Title = "FormClienteListar";
+}
+
+<h2>Listado Clientes</h2>
+
+@ViewBag.Mensaje
+
+<p>
+    @Html.ActionLink("Nuevo", "FormClienteNuevo")
+    @Html.ActionLink("Volver","PaginaMenu","Home")
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        @Html.TextBox("DatoFiltro")
+        <input type="submit" value="Filtrar" class="btn btn-default" />
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NroPasaporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassCli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NroTarjeta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (EC.Cliente item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NroPasaporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PassCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NroTarjeta)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "FormClienteModificar", new { item.NroPasaporte }) 
+            @Html.ActionLink("Consultar", "FormClienteConsultar", new { item.NroPasaporte }) 
+            @Html.ActionLink("Eliminar", "FormClienteBaja", new { item.NroPasaporte })
+        </td>
+    </tr>
+}
+</table>
