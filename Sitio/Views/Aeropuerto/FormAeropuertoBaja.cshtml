@@ -1,0 +1,71 @@
+﻿@model EC.Aeropuerto
+
+@{
+    ViewBag.Title = "FormCiudadBaja";
+}
+
+@ViewBag.Mensaje
+
+<h3>¿Esta seguro que desea eliminar este Aeropuerto?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImpuestoSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImpuestoSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImpuestoLlegada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImpuestoLlegada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoC)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al listado", "FormAeropuertoListar")
+        </div>
+    }
+</div>
