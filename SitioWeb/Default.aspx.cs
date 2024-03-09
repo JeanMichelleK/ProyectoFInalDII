@@ -14,7 +14,6 @@ public partial class _Default : System.Web.UI.Page
         {
             try
             {
-                Session["Usuario"] = null;
                 Session["Cliente"] = null;
                 this.GeneroContexto();
                 this.CargoDDl();
@@ -95,7 +94,7 @@ public partial class _Default : System.Web.UI.Page
                                         Partida = unV.Aeropuerto1.Nombre,
                                         Ciudad = unV.Aeropuerto1.Ciudad.Nombre,
                                         Pais = unV.Aeropuerto1.Ciudad.Pais,
-                                        PasajesVendidos = unV.Venta.Count
+                                        PasajesVendidos = unV.Venta
                                     }).ToList<object>();
             if (ListaVA.Count == 0)
                 lblError3.Text = "No hay vuelos que arriben en el Aeropuerto seleccionado.";
