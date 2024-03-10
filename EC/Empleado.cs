@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.ComponentModel.DataAnnotations;
 namespace EC
 {
     public class Empleado
@@ -11,12 +11,13 @@ namespace EC
         string _contraseña;
         string _nomCompleto;
         string _labor;
-
+        [Required(ErrorMessage ="Ingrese el Usuario")]
         public string Usuario
         {
             get { return _usuario; }
             set { _usuario = value; }
         }
+        [Required(ErrorMessage = "Ingrese la contraseña")]
         public string Contraseña
         {
             get { return _contraseña; }

@@ -9,7 +9,7 @@ namespace Sitio.Controllers
 {
     public class CiudadController : Controller
     {
-        [HttpGet]
+
         public ActionResult FormCiudadListar(string DatoFiltro)
         {
             try
@@ -120,7 +120,7 @@ namespace Sitio.Controllers
                 return View(new Ciudad());
             }
         }
-        [HttpGet]
+
         public ActionResult FormCiudadConsultar(string pCodigoC)
         {
             try

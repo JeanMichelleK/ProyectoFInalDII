@@ -10,7 +10,7 @@ namespace Sitio.Controllers
 {
     public class AeropuertoController : Controller
     {
-        [HttpGet]
+
         public ActionResult FormAeropuertoListar(string DatoFiltro)
         {
             try

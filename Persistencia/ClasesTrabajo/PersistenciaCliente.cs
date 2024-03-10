@@ -84,7 +84,7 @@ namespace Persistencia
         public void Baja(Cliente unC, Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
-            SqlCommand Comando = new SqlCommand("AltaCliente", _cnn);
+            SqlCommand Comando = new SqlCommand("BajaCliente", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@NroPasaporte", unC.NroPasaporte);
             SqlParameter Retorno = new SqlParameter("@Retorno", SqlDbType.Int);
