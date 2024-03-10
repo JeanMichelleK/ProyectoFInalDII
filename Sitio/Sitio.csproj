@@ -179,13 +179,11 @@
     <Content Include="Views\Ciudad\FormCiudadBaja.cshtml" />
     <Content Include="Views\Ciudad\FormCiudadConsultar.cshtml" />
     <Content Include="Views\Ciudad\FormCiudadListar.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\Aeropuerto\FormAeropuertoNuevo.cshtml" />
+	<Content Include="Views\Aeropuerto\FormAeropuertoNuevo.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoModificar.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoBaja.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoConsultar.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoListar.cshtml" />
-=======
     <Content Include="Views\Cliente\FormClienteListar.cshtml" />
     <Content Include="Views\Cliente\FormClienteNuevo.cshtml" />
     <Content Include="Views\Cliente\FormClienteModificar.cshtml" />
@@ -196,7 +194,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Empleado\FormLogueo.cshtml" />
     <Content Include="Views\Vuelo\FormVueloAlta.cshtml" />
->>>>>>> 6c641a22bd8b1a8cf92577715b83f169db3ad2d1
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -8,3 +8,13 @@ C:\Users\pitum\ProyectoFInalDII\EF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\pitum\ProyectoFInalDII\EF\obj\Debug\EF.csprojResolveAssemblyReference.cache
 C:\Users\pitum\ProyectoFInalDII\EF\obj\Debug\EF.dll
 C:\Users\pitum\ProyectoFInalDII\EF\obj\Debug\EF.pdb
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\bin\Debug\EF.dll.config
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\bin\Debug\EF.dll
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\bin\Debug\EF.pdb
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\bin\Debug\EntityFramework.dll
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\bin\Debug\EntityFramework.xml
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\obj\Debug\EF.csprojResolveAssemblyReference.cache
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\obj\Debug\EF.dll
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EF\obj\Debug\EF.pdb
