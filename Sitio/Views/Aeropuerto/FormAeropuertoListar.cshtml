@@ -1,0 +1,72 @@
+﻿@model IEnumerable<EC.Aeropuerto>
+
+@{
+    ViewBag.Title = "FormAeropuertoListar";
+}
+
+<h2>FormAeropuertoListar</h2>
+
+<p>
+    @Html.ActionLink("Nueva", "FormAeropuertoNuevo")
+    @Html.ActionLink("Volver", "Principal", "Home")
+</p>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        @Html.TextBox("DatoFiltro")
+        <input type="submit" value="Filtrar" class="btn btn-default" />
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImpuestoSalida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImpuestoLlegada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (EC.Aeropuerto item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImpuestoSalida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImpuestoLlegada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoC)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "FormAeropuertoModificar", new { item.CodigoA }) |
+            @Html.ActionLink("Consultar", "FormAeropuertoConsultar", new { item.CodigoA }) |
+            @Html.ActionLink("Eliminar", "FormAeropuertoBaja", new { item.CodigoA })
+        </td>
+    </tr>
+}
+
+</table>

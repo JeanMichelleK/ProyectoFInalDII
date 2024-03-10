@@ -107,3 +107,7 @@ C:\Users\pitum\ProyectoFInalDII\Sitio\bin\System.Web.Webpages.Razor.xml
 C:\Users\pitum\ProyectoFInalDII\Sitio\bin\System.Web.Helpers.xml
 C:\Users\pitum\ProyectoFInalDII\Sitio\bin\System.Web.Mvc.xml
 C:\Users\pitum\ProyectoFInalDII\Sitio\bin\Persistencia.pdb
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\Sitio\bin\Logica.dll
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\Sitio\bin\Persistencia.dll
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\Sitio\bin\Logica.pdb
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\Sitio\bin\Persistencia.pdb

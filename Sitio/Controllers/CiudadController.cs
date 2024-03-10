@@ -61,11 +61,11 @@ namespace Sitio.Controllers
         {
             try
             {
-                Ciudad C = FabricaLogica.GetLogicaCiudad().Buscar(pCodigoC, (Empleado)Session["Usuario"]);
+                Ciudad C =  FabricaLogica.GetLogicaCiudad().Buscar(pCodigoC, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
                 else
-                    throw new Exception("No existe la ciudad.");
+                    throw new Exception("No existe la ciudad.");    
             }
             catch (Exception ex)
             {
@@ -121,6 +121,10 @@ namespace Sitio.Controllers
             }
         }
 
+<<<<<<< HEAD
+=======
+        [HttpGet]
+>>>>>>> 26d77693dd6d829222c2e1b1b481ff5616d89495
         public ActionResult FormCiudadConsultar(string pCodigoC)
         {
             try
