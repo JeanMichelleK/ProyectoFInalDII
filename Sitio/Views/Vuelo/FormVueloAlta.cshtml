@@ -49,16 +49,16 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AeropuertoPartida, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CodigoAS, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.AeropuertoPartida.CodigoA, (SelectList)ViewBag.ListarAeropuertos)
+                @Html.DropDownListFor(model => model.CodigoAS, (SelectList)ViewBag.ListarAeropuertos)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AeropuertoLlegada, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CodigoAL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.AeropuertoLlegada, (SelectList)ViewBag.ListarAeropuertos)
+                @Html.DropDownListFor(model => model.CodigoAL, (SelectList)ViewBag.ListarAeropuertos)
             </div>
         </div>
 

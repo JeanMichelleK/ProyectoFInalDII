@@ -84,6 +84,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -178,10 +180,7 @@
     <Content Include="Views\Ciudad\FormCiudadModificar.cshtml" />
     <Content Include="Views\Ciudad\FormCiudadBaja.cshtml" />
     <Content Include="Views\Ciudad\FormCiudadConsultar.cshtml" />
-<<<<<<< HEAD
-=======
     <Content Include="Views\Ciudad\FormCiudadListar.cshtml" />
->>>>>>> cdafe87514d9a53e4b7f9777567e88e8f26f93b4
     <Content Include="Views\Aeropuerto\FormAeropuertoNuevo.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoModificar.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoBaja.cshtml" />
@@ -197,15 +196,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Empleado\FormLogueo.cshtml" />
     <Content Include="Views\Vuelo\FormVueloAlta.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Ciudad\FormCiudadListar.cshtml" />
     <Content Include="Views\Venta\FormVentaAlta.cshtml" />
     <Content Include="Views\Venta\FormPasajeVentaAlta.cshtml" />
     <Content Include="Views\Venta\FormAltaExito.cshtml" />
     <Content Include="Views\Venta\FormAltaError.cshtml" />
-=======
     <Content Include="Views\Vuelo\FormVuelosListar.cshtml" />
->>>>>>> cdafe87514d9a53e4b7f9777567e88e8f26f93b4
+    <Content Include="Views\Vuelo\FormVueloConsultar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,6 +225,10 @@
     <ProjectReference Include="..\Logica\Logica.csproj">
       <Project>{1ee9099e-eae6-4ec7-9456-114608bf2c04}</Project>
       <Name>Logica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{3e39c055-ae26-49d9-96d5-bb623b99a480}</Project>
+      <Name>Persistencia</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

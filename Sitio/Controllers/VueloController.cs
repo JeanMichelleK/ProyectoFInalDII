@@ -27,6 +27,7 @@ namespace Sitio.Controllers
             }
             catch (Exception ex)
             {
+                ViewBag.ListarAeropuertos = new SelectList(null);
                 ViewBag.Mensaje = ex.Message;
                 return View();
             }
@@ -36,7 +37,17 @@ namespace Sitio.Controllers
         {
             try
             {
-                V.CodigoVuelo = V.FechaHoraSalida.ToString("yyyyMMddHHmm") + V.AeropuertoPartida.CodigoA.ToString();
+                V.CodigoVuelo = V.FechaHoraSalida.ToString("yyyyMMddHHmm") + V.CodigoAS.ToString();
+                if (V.CodigoAS.Trim().Length > 0)
+                {
+                    string CodigoA = V.CodigoAS.ToString();
+                    V.AeropuertoPartida = FabricaLogica.GetLogicaAeropuerto().Buscar(CodigoA, (Empleado)Session["Usuario"]);
+                }
+                if (V.CodigoAL.Trim().Length > 0)
+                {
+                    string CodigoA = V.CodigoAL.ToString();
+                    V.AeropuertoLlegada = FabricaLogica.GetLogicaAeropuerto().Buscar(CodigoA, (Empleado)Session["Usuario"]);
+                }
                 V.Validar();
                 FabricaLogica.GetLogicaVuelo().Alta(V, (Empleado)Session["Usuario"]);
                 return RedirectToAction("FormVueloAlta", "Vuelo");
@@ -44,13 +55,11 @@ namespace Sitio.Controllers
             catch (Exception ex)
             {
                 List<Aeropuerto> Lista = FabricaLogica.GetLogicaAeropuerto().ListadoAeropuertos((Empleado)Session["Usuario"]);
-                ViewBag.ListarAeropuerto = new SelectList(Lista,"CodigoA","Nombre");
+                ViewBag.ListarAeropuertos = new SelectList(Lista,"CodigoA","Nombre");
                 ViewBag.Mensaje = ex.Message;
                 return View(new Vuelo());
             }
         }
-
-
 
         public ActionResult FormVuelosListar(string filtro, string vuelosPartieron, string vuelosNoPartieron, string AeropuertoFiltro, string vuelosfechaEspec)
         {
@@ -67,6 +76,7 @@ namespace Sitio.Controllers
 
                 if (_Lista.Count == 0)
                     throw new Exception("No hay vuelos para mostrar");
+                _Lista = _Lista.OrderBy(v => v.FechaHoraSalida).ToList();
                 List<Aeropuerto> _ListaA = FabricaLogica.GetLogicaAeropuerto().ListadoAeropuertos((Empleado)Session["Usuario"]);
                 ViewBag.ListaA = new SelectList(_ListaA, "CodigoA", "Nombre");
                 ViewBag.AeropuertoFiltro = "";
@@ -107,5 +117,41 @@ namespace Sitio.Controllers
                 return View(new List<Vuelo>());
             }
         }
-        }
+
+        //public ActionResult FormVueloConsultar(string CodigoVuelo)
+        //{
+        //    try
+        //    {
+        //        List<Vuelo> _Lista = null;
+        //        _Lista = (List<Vuelo>)Session["Lista"];
+
+        //        if (_Lista != null && !string.IsNullOrEmpty(CodigoVuelo))
+        //        {
+        //            Vuelo vueloConsultado = _Lista.FirstOrDefault(v => v.CodigoVuelo == CodigoVuelo);
+        //            if (vueloConsultado != null)
+        //            {
+        //                List<Venta> listaVentas = FabricaLogica.GetLogicaVenta().VentaVuelo(vueloConsultado, (Empleado)Session["Usuario"]);
+        //                List<Pasaje> listaPasajes = (List<Pasaje>)Session["ListaPasajes"];
+
+        //                foreach (Venta venta in listaVentas)
+        //                {
+
+        //                }
+        //            }
+        //            else
+        //                throw new Exception("No se encontró ningún vuelo con el código especificado.");
+        //        }
+        //    }
+
+        //    catch (Exception ex)
+        //    {
+        //        ViewBag.Mensaje = ex.Message;
+        //        return View(new List<Pasaje>());
+        //    }
+        //}
+
+
+
     }
+}
+    
