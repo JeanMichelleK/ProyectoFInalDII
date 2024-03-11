@@ -1,0 +1,64 @@
+﻿@model EC.Aeropuerto
+
+@{
+    ViewBag.Title = "FormAeropuertoConsultar";
+}
+
+<h2>Detalles del Aeropuerto</h2>
+
+
+@ViewBag.Mensaje
+<div>
+    @Html.ActionLink("Volver al listado", "FormAeropuertoListar")
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImpuestoSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImpuestoSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImpuestoLlegada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImpuestoLlegada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciudad.CodigoCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciudad.CodigoCiudad)
+        </dd>
+
+    </dl>
+</div>

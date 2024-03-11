@@ -6,7 +6,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\pitum\ProyectoFInalDII\Sitio\http:/localhost/ProyectoMVC</_PublishTargetUrl>
+    <_PublishTargetUrl>http://localhost/ProyectoMVC</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -16,7 +16,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/06/2024 16:53:24</publishTime>
     </File>
     <File Include="bin/EC.dll">
-      <publishTime>03/08/2024 19:38:45</publishTime>
+      <publishTime>03/11/2024 18:08:51</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/06/2024 16:53:24</publishTime>
@@ -25,7 +25,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/06/2024 16:53:24</publishTime>
     </File>
     <File Include="bin/Logica.dll">
-      <publishTime>03/08/2024 19:38:46</publishTime>
+      <publishTime>03/11/2024 18:08:51</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>03/06/2024 16:53:24</publishTime>
@@ -55,7 +55,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/06/2024 16:53:24</publishTime>
     </File>
     <File Include="bin/Persistencia.dll">
-      <publishTime>03/08/2024 19:38:45</publishTime>
+      <publishTime>03/11/2024 18:08:51</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>03/06/2024 16:53:24</publishTime>
@@ -94,7 +94,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/06/2024 16:53:24</publishTime>
     </File>
     <File Include="bin/Sitio.dll">
-      <publishTime>03/08/2024 19:38:47</publishTime>
+      <publishTime>03/11/2024 18:18:31</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>03/06/2024 16:53:24</publishTime>
@@ -177,17 +177,32 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="scripts/modernizr-2.6.2.js">
       <publishTime>03/06/2024 16:53:24</publishTime>
     </File>
+    <File Include="Views/Aeropuerto/FormAeropuertoBaja.cshtml">
+      <publishTime>03/11/2024 15:53:03</publishTime>
+    </File>
+    <File Include="Views/Aeropuerto/FormAeropuertoConsultar.cshtml">
+      <publishTime>03/11/2024 15:53:03</publishTime>
+    </File>
+    <File Include="Views/Aeropuerto/FormAeropuertoListar.cshtml">
+      <publishTime>03/11/2024 18:06:15</publishTime>
+    </File>
+    <File Include="Views/Aeropuerto/FormAeropuertoModificar.cshtml">
+      <publishTime>03/11/2024 15:53:03</publishTime>
+    </File>
+    <File Include="Views/Aeropuerto/FormAeropuertoNuevo.cshtml">
+      <publishTime>03/11/2024 17:46:38</publishTime>
+    </File>
     <File Include="Views/Ciudad/FormCiudadBaja.cshtml">
       <publishTime>03/06/2024 16:53:24</publishTime>
     </File>
     <File Include="Views/Ciudad/FormCiudadConsultar.cshtml">
-      <publishTime>03/06/2024 16:53:24</publishTime>
+      <publishTime>03/10/2024 20:13:28</publishTime>
     </File>
     <File Include="Views/Ciudad/FormCiudadListar.cshtml">
-      <publishTime>03/06/2024 16:53:24</publishTime>
+      <publishTime>03/10/2024 21:24:52</publishTime>
     </File>
     <File Include="Views/Ciudad/FormCiudadModificar.cshtml">
-      <publishTime>03/06/2024 16:53:24</publishTime>
+      <publishTime>03/10/2024 20:13:29</publishTime>
     </File>
     <File Include="Views/Ciudad/FormCiudadNueva.cshtml">
       <publishTime>03/06/2024 16:53:24</publishTime>
@@ -199,16 +214,19 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/06/2024 17:51:40</publishTime>
     </File>
     <File Include="Views/Cliente/FormClienteListar.cshtml">
-      <publishTime>03/06/2024 17:55:24</publishTime>
+      <publishTime>03/10/2024 20:10:18</publishTime>
     </File>
     <File Include="Views/Cliente/FormClienteModificar.cshtml">
-      <publishTime>03/06/2024 17:47:27</publishTime>
+      <publishTime>03/10/2024 18:53:07</publishTime>
     </File>
     <File Include="Views/Cliente/FormClienteNuevo.cshtml">
       <publishTime>03/06/2024 17:45:35</publishTime>
     </File>
     <File Include="Views/Empleado/FormLogueo.cshtml">
-      <publishTime>03/08/2024 19:05:06</publishTime>
+      <publishTime>03/11/2024 17:59:31</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>03/09/2024 13:46:48</publishTime>
     </File>
     <File Include="Views/Home/PaginaMenu.cshtml">
       <publishTime>03/08/2024 19:10:45</publishTime>
@@ -217,7 +235,28 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/08/2024 19:07:09</publishTime>
     </File>
     <File Include="Views/Shared/_Layout2.cshtml">
-      <publishTime>03/08/2024 19:08:01</publishTime>
+      <publishTime>03/11/2024 17:08:15</publishTime>
+    </File>
+    <File Include="Views/Venta/FormAltaError.cshtml">
+      <publishTime>03/11/2024 00:27:43</publishTime>
+    </File>
+    <File Include="Views/Venta/FormAltaExito.cshtml">
+      <publishTime>03/11/2024 00:22:58</publishTime>
+    </File>
+    <File Include="Views/Venta/FormPasajeVentaAlta.cshtml">
+      <publishTime>03/11/2024 17:09:12</publishTime>
+    </File>
+    <File Include="Views/Venta/FormVentaAlta.cshtml">
+      <publishTime>03/11/2024 18:01:33</publishTime>
+    </File>
+    <File Include="Views/Vuelo/FormVueloAlta.cshtml">
+      <publishTime>03/11/2024 16:54:22</publishTime>
+    </File>
+    <File Include="Views/Vuelo/FormVueloConsultar.cshtml">
+      <publishTime>03/11/2024 17:38:35</publishTime>
+    </File>
+    <File Include="Views/Vuelo/FormVuelosListar.cshtml">
+      <publishTime>03/11/2024 16:03:28</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>03/06/2024 16:53:24</publishTime>
@@ -226,7 +265,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/06/2024 16:53:24</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/08/2024 19:38:47</publishTime>
+      <publishTime>03/11/2024 18:09:21</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -9,11 +9,13 @@ namespace Sitio.Controllers
 {
     public class CiudadController : Controller
     {
-        [HttpGet]
+
         public ActionResult FormCiudadListar(string DatoFiltro)
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 List<Ciudad> Lista = FabricaLogica.GetLogicaCiudad().ListadoCiudades((Empleado)Session["Usuario"]);
                 if (Lista.Count >= 1)
                 {
@@ -40,6 +42,8 @@ namespace Sitio.Controllers
         [HttpGet]
         public ActionResult FormCiudadNueva()
         {
+            if (!(Session["Usuario"] is Empleado))
+                return RedirectToAction("FormLogueo", "Empleado");
             return View();
         }
 
@@ -65,6 +69,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Ciudad C =  FabricaLogica.GetLogicaCiudad().Buscar(CodigoCiudad, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
@@ -98,6 +104,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Ciudad C = FabricaLogica.GetLogicaCiudad().Buscar(CodigoCiudad, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
@@ -130,6 +138,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Ciudad C = FabricaLogica.GetLogicaCiudad().Buscar(CodigoCiudad, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);

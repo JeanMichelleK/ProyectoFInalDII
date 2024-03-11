@@ -101,7 +101,7 @@ namespace EC
              throw new Exception("El aeropuerto no se encuentra disponible");
             if (this.AeropuertoPartida == null)
              throw new Exception("El aeropuerto no se encuentra disponible");
-            if (this.AeropuertoPartida == this.AeropuertoLlegada)
+            if (this.AeropuertoPartida.CodigoA == this.AeropuertoLlegada.CodigoA)
                 throw new Exception("El aeropuerto de partida no puede ser el mismo que el de destino.");
             if (this.Precio <= 0)
                 throw new Exception("El precio no puede ser negativo");

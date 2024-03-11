@@ -21,6 +21,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 List<Aeropuerto> ListaA = FabricaLogica.GetLogicaAeropuerto().ListadoAeropuertos((Empleado)Session["Usuario"]);
                 ViewBag.ListarAeropuertos = new SelectList(ListaA, "CodigoA", "Nombre");
                 return View();
@@ -65,6 +67,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 List<Vuelo> _Lista = null;
                 if (Session["Lista"] == null)
                 {
@@ -118,37 +122,37 @@ namespace Sitio.Controllers
             }
         }
 
-        //public ActionResult FormVueloConsultar(string CodigoVuelo)
-        //{
-        //    try
-        //    {
-        //        List<Vuelo> _Lista = null;
-        //        _Lista = (List<Vuelo>)Session["Lista"];
+        public ActionResult FormVueloConsultar(string CodigoVuelo)
+        {
+            try
+            {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
+                List<Vuelo> _Lista = null;
+                _Lista = (List<Vuelo>)Session["Lista"];
+                List<Pasaje> Pasajes = new List<Pasaje>();
 
-        //        if (_Lista != null && !string.IsNullOrEmpty(CodigoVuelo))
-        //        {
-        //            Vuelo vueloConsultado = _Lista.FirstOrDefault(v => v.CodigoVuelo == CodigoVuelo);
-        //            if (vueloConsultado != null)
-        //            {
-        //                List<Venta> listaVentas = FabricaLogica.GetLogicaVenta().VentaVuelo(vueloConsultado, (Empleado)Session["Usuario"]);
-        //                List<Pasaje> listaPasajes = (List<Pasaje>)Session["ListaPasajes"];
+                if (_Lista != null && !string.IsNullOrEmpty(CodigoVuelo))
+                {
+                    Vuelo vueloConsultado = _Lista.FirstOrDefault(v => v.CodigoVuelo == CodigoVuelo);
+                    List<Venta> ListaVent = FabricaLogica.GetLogicaVenta().VentaVuelo(vueloConsultado, (Empleado)Session["Usuario"]);
+                    foreach (Venta Vent in ListaVent)
+                    {
+                        foreach (Pasaje Pasaj in Vent.ListaP)
+                        {
+                            Pasajes.Add(Pasaj);
+                        }
+                    }
+                }
+                return View(Pasajes);  
+            }
 
-        //                foreach (Venta venta in listaVentas)
-        //                {
-
-        //                }
-        //            }
-        //            else
-        //                throw new Exception("No se encontró ningún vuelo con el código especificado.");
-        //        }
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-        //        ViewBag.Mensaje = ex.Message;
-        //        return View(new List<Pasaje>());
-        //    }
-        //}
+            catch (Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+                return View(new List<Pasaje>());
+            }
+        }
 
 
 

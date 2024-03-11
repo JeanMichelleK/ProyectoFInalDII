@@ -20,6 +20,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 List<Vuelo> ListaV = FabricaLogica.GetLogicaVuelo().ListadoVuelos((Empleado)Session["Usuario"]);
                 ViewBag.ListarVuelos = new SelectList(ListaV,"CodigoVuelo","CodigoVuelo");
                 Session["ListaV"] = ListaV;
@@ -66,6 +68,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 List<Cliente> ListaC = FabricaLogica.GetLogicaCliente().ListadoClientes((Empleado)Session["Usuario"]);
                 ViewBag.ListaCliente = new SelectList(ListaC, "NroPasaporte", "Nombre");
 
@@ -114,6 +118,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Venta V = (Venta)Session["Venta"];
                
                 V.FechaVenta = DateTime.Now;
@@ -131,10 +137,14 @@ namespace Sitio.Controllers
 
         public ActionResult FormAltaExito()
         {
+            if (!(Session["Usuario"] is Empleado))
+                return RedirectToAction("FormLogueo", "Empleado");
             return View();
         }
         public ActionResult FormAltaError()
         {
+            if (!(Session["Usuario"] is Empleado))
+                return RedirectToAction("FormLogueo", "Empleado");
             ViewBag.Mensaje = Session["ErrorVenta"].ToString();
             return View();
         }

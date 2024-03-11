@@ -10,11 +10,13 @@ namespace Sitio.Controllers
 {
     public class ClienteController : Controller
     {
-        [HttpGet]
+
         public ActionResult FormClienteListar(string DatoFiltro)
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 List<Cliente> Lista = FabricaLogica.GetLogicaCliente().ListadoClientes((Empleado)Session["Usuario"]);
                 if (Lista.Count >= 1)
                 {
@@ -40,6 +42,8 @@ namespace Sitio.Controllers
         [HttpGet]
         public ActionResult FormClienteNuevo()
         {
+            if (!(Session["Usuario"] is Empleado))
+                return RedirectToAction("FormLogueo", "Empleado");
             return View();
         }
         [HttpPost]
@@ -62,6 +66,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Cliente C = FabricaLogica.GetLogicaCliente().Buscar(NroPasaporte, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
@@ -96,6 +102,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Cliente C = FabricaLogica.GetLogicaCliente().Buscar(NroPasaporte, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
@@ -122,11 +130,13 @@ namespace Sitio.Controllers
                 return View(new Cliente());
             }
         }
-        [HttpPost]
+
         public ActionResult FormClienteConsultar(string NroPasaporte)
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Cliente C = FabricaLogica.GetLogicaCliente().Buscar(NroPasaporte, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);

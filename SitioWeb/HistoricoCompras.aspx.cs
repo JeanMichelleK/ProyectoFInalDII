@@ -14,6 +14,8 @@ public partial class HistoricoCompras : System.Web.UI.Page
         {
             try
             {
+                if (!(Session["Cliente"] is Cliente))
+                    Response.Redirect("~/LogueoCliente.aspx");
                 this.CargoGrilla();
             }
             catch (Exception ex)

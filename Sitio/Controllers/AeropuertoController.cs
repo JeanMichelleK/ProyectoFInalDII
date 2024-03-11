@@ -15,6 +15,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 List<Aeropuerto> Lista = FabricaLogica.GetLogicaAeropuerto().ListadoAeropuertos((Empleado)Session["Usuario"]);
                 if (Lista.Count >= 1)
                 {
@@ -42,6 +44,8 @@ namespace Sitio.Controllers
         [HttpGet]
         public ActionResult FormAeropuertoNuevo()
         {
+            if (!(Session["Usuario"] is Empleado))
+                return RedirectToAction("FormLogueo", "Empleado");
             return View();
         }
         [HttpPost]
@@ -49,6 +53,11 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (A.CodigoC.Trim().Length > 0)
+                {
+                    string Cod = A.CodigoC.ToString();
+                    A.Ciudad = FabricaLogica.GetLogicaCiudad().Buscar(Cod, (Empleado)Session["Usuario"]);
+                }
                 A.Validar();
                 FabricaLogica.GetLogicaAeropuerto().Alta(A, (Empleado)Session["Usuario"]);
                 return RedirectToAction("FormAeropuertoListar", "Aeropuerto");
@@ -65,6 +74,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(CodigoA, (Empleado)Session["Usuario"]);
                 if (A != null)
                     return View(A);
@@ -100,6 +111,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(CodigoA, (Empleado)Session["Usuario"]);
                 if (A != null)
                     return View(A);
@@ -132,6 +145,8 @@ namespace Sitio.Controllers
         {
             try
             {
+                if (!(Session["Usuario"] is Empleado))
+                    return RedirectToAction("FormLogueo", "Empleado");
                 Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(CodigoA, (Empleado)Session["Usuario"]);
                 if (A != null)
                     return View(A);

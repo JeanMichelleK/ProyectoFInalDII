@@ -1,0 +1,10 @@
+C:\Users\pitum\ProyectoFInalDII\EF\bin\Release\EF.dll.config
+C:\Users\pitum\ProyectoFInalDII\EF\bin\Release\EF.dll
+C:\Users\pitum\ProyectoFInalDII\EF\bin\Release\EF.pdb
+C:\Users\pitum\ProyectoFInalDII\EF\bin\Release\EntityFramework.dll
+C:\Users\pitum\ProyectoFInalDII\EF\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\pitum\ProyectoFInalDII\EF\bin\Release\EntityFramework.xml
+C:\Users\pitum\ProyectoFInalDII\EF\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\pitum\ProyectoFInalDII\EF\obj\Release\EF.csprojResolveAssemblyReference.cache
+C:\Users\pitum\ProyectoFInalDII\EF\obj\Release\EF.dll
+C:\Users\pitum\ProyectoFInalDII\EF\obj\Release\EF.pdb
