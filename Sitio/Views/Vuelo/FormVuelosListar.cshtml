@@ -80,7 +80,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.AeropuertoPartida.Nombre)
         </td>
+        <td>
+            @Html.ActionLink("Consultar", "FormVueloConsultar", new { item.CodigoVuelo }) 
+        </td>
     </tr>
 }
-
 </table>

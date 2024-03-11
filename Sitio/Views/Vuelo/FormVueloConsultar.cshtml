@@ -1,0 +1,74 @@
+﻿@model EC.Vuelo
+
+@{
+    ViewBag.Title = "FormVueloConsultar";
+}
+
+<h2>Consultar Vuelo</h2>
+
+@ViewBag.Mensaje
+
+<div>
+    @Html.ActionLink("Volver al listado", "FormVuelosListar")
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoVuelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoVuelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraLlegada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraLlegada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadAsientos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadAsientos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoAL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+</p>

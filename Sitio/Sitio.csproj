@@ -195,6 +195,7 @@
     <Content Include="Views\Empleado\FormLogueo.cshtml" />
     <Content Include="Views\Vuelo\FormVueloAlta.cshtml" />
     <Content Include="Views\Vuelo\FormVuelosListar.cshtml" />
+    <Content Include="Views\Vuelo\FormVueloConsultar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,6 +219,10 @@
     <ProjectReference Include="..\Logica\Logica.csproj">
       <Project>{1ee9099e-eae6-4ec7-9456-114608bf2c04}</Project>
       <Name>Logica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{3e39c055-ae26-49d9-96d5-bb623b99a480}</Project>
+      <Name>Persistencia</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
