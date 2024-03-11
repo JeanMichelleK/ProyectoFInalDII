@@ -31,9 +31,9 @@ namespace Logica
         {
             FabricaPersistencia.GetPersistenciaAeropuerto().Baja(unA, pUsu);
         }
-        public Aeropuerto Buscar(string pCodigo, Empleado pUsu)
+        public Aeropuerto Buscar(string codigoA, Empleado pUsu)
         {
-            return (FabricaPersistencia.GetPersistenciaAeropuerto().BuscarAeropuertoActivo(pCodigo, pUsu));
+            return (FabricaPersistencia.GetPersistenciaAeropuerto().BuscarAeropuertoActivo(codigoA, pUsu));
         }
         public List<Aeropuerto> ListadoAeropuertos(Empleado pUsu)
         {

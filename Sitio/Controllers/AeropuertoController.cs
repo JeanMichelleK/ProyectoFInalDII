@@ -34,7 +34,7 @@ namespace Sitio.Controllers
             catch (Exception ex)
             {
                 ViewBag.Mensaje = ex.Message;
-                return ViewBag(new List<Aeropuerto>());
+                return View(new List<Aeropuerto>());
             }
         }
 
@@ -44,7 +44,6 @@ namespace Sitio.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public ActionResult FormAeropuertoNuevo(Aeropuerto A)
         {

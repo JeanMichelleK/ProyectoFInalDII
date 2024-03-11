@@ -10,7 +10,7 @@ namespace Sitio.Controllers
 {
     public class ClienteController : Controller
     {
-
+        [HttpGet]
         public ActionResult FormClienteListar(string DatoFiltro)
         {
             try
@@ -122,7 +122,7 @@ namespace Sitio.Controllers
                 return View(new Cliente());
             }
         }
-
+        [HttpPost]
         public ActionResult FormClienteConsultar(string NroPasaporte)
         {
             try

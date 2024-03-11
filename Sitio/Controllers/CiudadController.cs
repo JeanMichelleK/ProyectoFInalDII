@@ -9,28 +9,32 @@ namespace Sitio.Controllers
 {
     public class CiudadController : Controller
     {
-
+        [HttpGet]
         public ActionResult FormCiudadListar(string DatoFiltro)
         {
             try
             {
                 List<Ciudad> Lista = FabricaLogica.GetLogicaCiudad().ListadoCiudades((Empleado)Session["Usuario"]);
-                if (Lista.Count == 0)
-                    throw new Exception("No hay facturas para mostrar");
-
-                if (!String.IsNullOrEmpty(DatoFiltro))
+                if (Lista.Count >= 1)
                 {
-                    Lista = (from unC in Lista
-                             where unC.Nombre.ToUpper().StartsWith(DatoFiltro.ToUpper())
-                             select unC).ToList();
+                    if (String.IsNullOrEmpty(DatoFiltro))
+                        return View(Lista);
+                    else
+                    {
+                        Lista = (from unC in Lista
+                                 where unC.Nombre.ToUpper().StartsWith(DatoFiltro.ToUpper())
+                                 select unC).ToList();
+                        return View(Lista);
+                    }
                 }
-                return View(Lista);
+                else
+                    throw new Exception("No hay ciudades para mostrar.");
             }
             catch (Exception ex)
             {
                 ViewBag.Mensaje = ex.Message;
                 return View(new List<Ciudad>());
-            }
+            }         
         }
 
         [HttpGet]
@@ -122,7 +126,6 @@ namespace Sitio.Controllers
         }
 
         [HttpGet]
-
         public ActionResult FormCiudadConsultar(string CodigoCiudad)
         {
             try
