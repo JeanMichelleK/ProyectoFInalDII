@@ -43,6 +43,8 @@ namespace Sitio.Controllers
             }
             catch (Exception ex)
             {
+                List<Aeropuerto> Lista = FabricaLogica.GetLogicaAeropuerto().ListadoAeropuertos((Empleado)Session["Usuario"]);
+                ViewBag.ListarAeropuerto = new SelectList(Lista,"CodigoA","Nombre");
                 ViewBag.Mensaje = ex.Message;
                 return View(new Vuelo());
             }

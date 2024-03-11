@@ -51,3 +51,4 @@ C:\Users\PCStore\Repositorio\ProyectoFInalDII\EC\bin\Debug\System.Web.WebPages.D
 C:\Users\PCStore\Repositorio\ProyectoFInalDII\EC\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\PCStore\Repositorio\ProyectoFInalDII\EC\obj\Debug\EC.dll
 C:\Users\PCStore\Repositorio\ProyectoFInalDII\EC\obj\Debug\EC.pdb
+C:\Users\PCStore\Repositorio\ProyectoFInalDII\EC\obj\Debug\EC.csprojResolveAssemblyReference.cache

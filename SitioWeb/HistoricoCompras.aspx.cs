@@ -30,16 +30,11 @@ public partial class HistoricoCompras : System.Web.UI.Page
             Cliente unC = (Cliente)Session["Cliente"];
             ProyectoFinalEntities PFContext = (ProyectoFinalEntities)Session["PFContext"];
             List<Venta> Lista = PFContext.Venta.ToList();
-            List<object> ListaV = (from unaV in Lista
+            List<Venta> ListaV = (from unaV in Lista
                                    orderby unaV.FechaVenta
                                    where unaV.Cliente == unC
-                                   select new
-                                   {
-                                       Fecha = unaV.FechaVenta,
-                                       Vuelo = unaV.CodigoV,
-                                       Monto = unaV.Monto,
-                                       Empleado = unaV.Empleado.Usuario
-                                   }).ToList<object>();
+                                   select unaV
+                                   ).ToList<Venta>();
             gvCompras.DataSource = ListaV;
             gvCompras.DataBind();
         }
@@ -49,25 +44,39 @@ public partial class HistoricoCompras : System.Web.UI.Page
         }
     }
 
-    //    protected void gvCompras_SelectedIndexChanged(object sender, EventArgs e)
-    //    {
-    //        try
-    //        {
-    //            ProyectoFinalEntities PFContext = (ProyectoFinalEntities)Session["PFContext"];
-    //            Cliente unC = (Cliente)Session["Cliente"];
-    //            List<object> Lista = (from unP in PFContext.Venta
-    //                                  where unP.Cliente == unC
-    //                                  select new
-    //                                  {
-    //                                      Partida = unP.Vuelo.Aeropuerto.Nombre,
+    protected void gvCompras_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            ProyectoFinalEntities PFContext = (ProyectoFinalEntities)Session["PFContext"];
+            Cliente unC = (Cliente)Session["Cliente"];
+            int IdVenta = Convert.ToInt32(gvCompras.SelectedDataKey.Value);
+            List<object> Lista = (from unP in PFContext.Venta
+                                  where unP.IdVenta == IdVenta
+                                  select new
+                                  {
+                                      Partida = unP.Vuelo.Aeropuerto1.Nombre,
+                                      Ciudad = unP.Vuelo.Aeropuerto1.Ciudad.Nombre,
+                                      Pais = unP.Vuelo.Aeropuerto1.Ciudad.Pais,
+                                      Destino = unP.Vuelo.Aeropuerto.Nombre,
+                                      CiudadDestino = unP.Vuelo.Aeropuerto.Ciudad.Nombre,
+                                      PaisDestino = unP.Vuelo.Aeropuerto.Ciudad.Pais,
+                                  }).ToList<object>();
+            gvDatos.DataSource = Lista;
+            gvDatos.DataBind();
+            List<Pasaje> ListaP = (from unV in PFContext.Venta
+                                   where unV.IdVenta == IdVenta
+                                   from unp in unV.Pasaje
+                                   select unp).ToList();
+            gvPasaje.DataSource = ListaP;
+            gvPasaje.DataBind();
+        }
+        catch (Exception ex)
+        {
+            lblError.Text = ex.Message;
+        }
+    }
 
-    //                                  }).ToList<object>();
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            lblError.Text = ex.Message;
-    //        }
-    //    }
 
 
 }
