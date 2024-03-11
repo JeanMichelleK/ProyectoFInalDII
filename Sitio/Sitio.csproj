@@ -178,8 +178,7 @@
     <Content Include="Views\Ciudad\FormCiudadModificar.cshtml" />
     <Content Include="Views\Ciudad\FormCiudadBaja.cshtml" />
     <Content Include="Views\Ciudad\FormCiudadConsultar.cshtml" />
-    <Content Include="Views\Ciudad\FormCiudadListar.cshtml" />
-	<Content Include="Views\Aeropuerto\FormAeropuertoNuevo.cshtml" />
+    <Content Include="Views\Aeropuerto\FormAeropuertoNuevo.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoModificar.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoBaja.cshtml" />
     <Content Include="Views\Aeropuerto\FormAeropuertoConsultar.cshtml" />
@@ -194,6 +193,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Empleado\FormLogueo.cshtml" />
     <Content Include="Views\Vuelo\FormVueloAlta.cshtml" />
+    <Content Include="Views\Ciudad\FormCiudadListar.cshtml" />
+    <Content Include="Views\Venta\FormVentaAlta.cshtml" />
+    <Content Include="Views\Venta\FormPasajeVentaAlta.cshtml" />
+    <Content Include="Views\Venta\FormAltaExito.cshtml" />
+    <Content Include="Views\Venta\FormAltaError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -204,7 +208,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Venta\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -62,11 +62,11 @@ namespace Sitio.Controllers
         }
 
         [HttpGet]
-        public ActionResult FormAeropuertoModificar(string pCodigoA)
+        public ActionResult FormAeropuertoModificar(string CodigoA)
         {
             try
             {
-                Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(pCodigoA, (Empleado)Session["Usuario"]);
+                Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(CodigoA, (Empleado)Session["Usuario"]);
                 if (A != null)
                     return View(A);
                 else
@@ -75,7 +75,7 @@ namespace Sitio.Controllers
             catch (Exception ex)
             {
                 ViewBag.Mensaje = ex.Message;
-                return ViewBag(new Aeropuerto());
+                return View(new Aeropuerto());
             }
         }
 
@@ -97,11 +97,11 @@ namespace Sitio.Controllers
         }
 
         [HttpGet]
-        public ActionResult FormAeropuertoBaja(string pCodigoA)
+        public ActionResult FormAeropuertoBaja(string CodigoA)
         {
             try
             {
-                Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(pCodigoA, (Empleado)Session["Usuario"]);
+                Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(CodigoA, (Empleado)Session["Usuario"]);
                 if (A != null)
                     return View(A);
                 else
@@ -129,11 +129,11 @@ namespace Sitio.Controllers
         }
 
         [HttpGet]
-        public ActionResult FormAeropuertoConsultar(string pCodigoA)
+        public ActionResult FormAeropuertoConsultar(string CodigoA)
         {
             try
             {
-                Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(pCodigoA, (Empleado)Session["Usuario"]);
+                Aeropuerto A = FabricaLogica.GetLogicaAeropuerto().Buscar(CodigoA, (Empleado)Session["Usuario"]);
                 if (A != null)
                     return View(A);
                 else

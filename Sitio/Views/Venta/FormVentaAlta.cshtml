@@ -1,0 +1,46 @@
+﻿@model EC.Venta
+
+@{
+    ViewBag.Title = "FormVentaAlta";
+}
+
+<h2>Generar Venta</h2>
+
+@ViewBag.Mensaje
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Vuelo.CodigoVuelo, htmlAttributes: new { @class = "control-label col-md-2"})
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(model => model.Vuelo.CodigoVuelo, (SelectList)ViewBag.ListarVuelos)
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Cliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(model => model.NroPasaporte,(SelectList)ViewBag.ListaCliente)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <input type="submit" value="Asignar Asientos" class="btn btn-default" /></td>
+                </tr>
+            </table>
+    </div>
+        </div>
+}
+
+
+

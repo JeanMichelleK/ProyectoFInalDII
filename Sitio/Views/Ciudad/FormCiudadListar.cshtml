@@ -10,7 +10,7 @@
 
 <p>
     @Html.ActionLink("Nueva", "FormCiudadNueva") |
-    @Html.ActionLink("Volver","PaginaMenu","Home")
+    @Html.ActionLink("Volver", "PaginaMenu", "Home")
 </p>
 
 @using (Html.BeginForm())
@@ -18,9 +18,9 @@
 
     <table>
         <tr>
-            <td>Nombre: @Html.TextBox("DatoFiltro","")</td>
-            <td><input type="submit" value="Filtrar" class="btn btn-default"/></td>
-            <td>@Html.ActionLink("Limpiar","FormCiudadListar",null,new { @class = "btn btn-default" })</td>
+            <td>Nombre: @Html.TextBox("DatoFiltro", "")</td>
+            <td><input type="submit" value="Filtrar" class="btn btn-default" /></td>
+            <td>@Html.ActionLink("Limpiar", "FormCiudadListar", null, new { @class = "btn btn-default" })</td>
         </tr>
     </table>
 }
@@ -39,22 +39,23 @@
         <th></th>
     </tr>
 
-@foreach (EC.Ciudad item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CodigoCiudad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pais)
-        </td>
-        <td>
-            @Html.ActionLink("Modificar", "FormCiudadModificar", new { item.CodigoCiudad }) |
-            @Html.ActionLink("Consultar", "FormCiudadConsultar", new { item.CodigoCiudad}) |
-            @Html.ActionLink("Eliminar", "FormCiudadBaja", new {item.CodigoCiudad })
-        </td>
-    </tr>
-}
+    @foreach (EC.Ciudad item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoCiudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pais)
+            </td>
+            <td>
+                @Html.ActionLink("Modificar", "FormCiudadModificar", new { item.CodigoCiudad }) |
+                @Html.ActionLink("Consultar", "FormCiudadConsultar", new { item.CodigoCiudad }) |
+                @Html.ActionLink("Eliminar", "FormCiudadBaja", new { item.CodigoCiudad })
+            </td>
+        </tr>
+    }
 </table>

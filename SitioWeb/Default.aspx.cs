@@ -70,7 +70,7 @@ public partial class _Default : System.Web.UI.Page
                 return;
             }
             List<object> ListaVP = (from unV in ListaV
-                                    orderby unV.FechaYHoraSalida
+                                    orderby unV.FechaYHoraSalida                               
                                     where unV.Aeropuerto1.Nombre == ddlAeropuerto.SelectedValue && unV.FechaYHoraSalida > DateTime.Now
                                     select new
                                     {
@@ -78,7 +78,7 @@ public partial class _Default : System.Web.UI.Page
                                         Destino = unV.Aeropuerto.Nombre,
                                         Ciudad = unV.Aeropuerto.Ciudad.Nombre,
                                         Pais = unV.Aeropuerto.Ciudad.Pais,
-                                        PasajesVendidos = unV.Venta.Count
+                                        PasajesVendidos = "?"
                                    }).ToList<object>();
             if (ListaVP.Count == 0)
                 lblError2.Text = "No hay vuelos que partan de el Aeropuerto seleccionado.";
@@ -94,7 +94,7 @@ public partial class _Default : System.Web.UI.Page
                                         Partida = unV.Aeropuerto1.Nombre,
                                         Ciudad = unV.Aeropuerto1.Ciudad.Nombre,
                                         Pais = unV.Aeropuerto1.Ciudad.Pais,
-                                        PasajesVendidos = unV.Venta
+                                        PasajesVendidos = "?"
                                     }).ToList<object>();
             if (ListaVA.Count == 0)
                 lblError3.Text = "No hay vuelos que arriben en el Aeropuerto seleccionado.";

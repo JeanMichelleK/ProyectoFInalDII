@@ -127,6 +127,7 @@ namespace Persistencia
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Aeropuerto unA = null;
             SqlCommand Comando = new SqlCommand("BuscarAeropuertoActivo", _cnn);
+            Comando.Parameters.AddWithValue("@CodigoA", pCodigo);
             Comando.CommandType = CommandType.StoredProcedure;
             try
             {

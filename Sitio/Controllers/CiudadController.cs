@@ -57,11 +57,11 @@ namespace Sitio.Controllers
         }
 
         [HttpGet]
-        public ActionResult FormCiudadModificar(string pCodigoC)
+        public ActionResult FormCiudadModificar(string CodigoCiudad)
         {
             try
             {
-                Ciudad C =  FabricaLogica.GetLogicaCiudad().Buscar(pCodigoC, (Empleado)Session["Usuario"]);
+                Ciudad C =  FabricaLogica.GetLogicaCiudad().Buscar(CodigoCiudad, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
                 else
@@ -90,11 +90,11 @@ namespace Sitio.Controllers
             }
         }
         [HttpGet]
-        public ActionResult FormCiudadBaja(string pCodigoC)
+        public ActionResult FormCiudadBaja(string CodigoCiudad)
         {
             try
             {
-                Ciudad C = FabricaLogica.GetLogicaCiudad().Buscar(pCodigoC, (Empleado)Session["Usuario"]);
+                Ciudad C = FabricaLogica.GetLogicaCiudad().Buscar(CodigoCiudad, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
                 else
@@ -121,15 +121,13 @@ namespace Sitio.Controllers
             }
         }
 
-<<<<<<< HEAD
-=======
         [HttpGet]
->>>>>>> 26d77693dd6d829222c2e1b1b481ff5616d89495
-        public ActionResult FormCiudadConsultar(string pCodigoC)
+
+        public ActionResult FormCiudadConsultar(string CodigoCiudad)
         {
             try
             {
-                Ciudad C = FabricaLogica.GetLogicaCiudad().Buscar(pCodigoC, (Empleado)Session["Usuario"]);
+                Ciudad C = FabricaLogica.GetLogicaCiudad().Buscar(CodigoCiudad, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
                 else

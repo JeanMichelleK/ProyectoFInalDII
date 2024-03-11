@@ -59,7 +59,7 @@
             @Html.DisplayFor(modelItem => item.ImpuestoLlegada)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CodigoC)
+            @Html.DisplayFor(modelItem => item.Ciudad.Nombre)
         </td>
         <td>
             @Html.ActionLink("Modificar", "FormAeropuertoModificar", new { item.CodigoA }) |

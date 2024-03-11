@@ -58,11 +58,11 @@ namespace Sitio.Controllers
             }
         }
         [HttpGet]
-        public ActionResult FormClienteModificar(string pPasaporte)
+        public ActionResult FormClienteModificar(string NroPasaporte)
         {
             try
             {
-                Cliente C = FabricaLogica.GetLogicaCliente().Buscar(pPasaporte, (Empleado)Session["Usuario"]);
+                Cliente C = FabricaLogica.GetLogicaCliente().Buscar(NroPasaporte, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
                 else
@@ -92,11 +92,11 @@ namespace Sitio.Controllers
             }
         }
         [HttpGet]
-        public ActionResult FormClienteBaja(string pPasaporte)
+        public ActionResult FormClienteBaja(string NroPasaporte)
         {
             try
             {
-                Cliente C = FabricaLogica.GetLogicaCliente().Buscar(pPasaporte, (Empleado)Session["Usuario"]);
+                Cliente C = FabricaLogica.GetLogicaCliente().Buscar(NroPasaporte, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
                 else
@@ -123,11 +123,11 @@ namespace Sitio.Controllers
             }
         }
 
-        public ActionResult FormClienteConsultar(string pPasaporte)
+        public ActionResult FormClienteConsultar(string NroPasaporte)
         {
             try
             {
-                Cliente C = FabricaLogica.GetLogicaCliente().Buscar(pPasaporte, (Empleado)Session["Usuario"]);
+                Cliente C = FabricaLogica.GetLogicaCliente().Buscar(NroPasaporte, (Empleado)Session["Usuario"]);
                 if (C != null)
                     return View(C);
                 else
