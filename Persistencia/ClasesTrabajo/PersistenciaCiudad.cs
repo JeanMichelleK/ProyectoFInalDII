@@ -110,13 +110,13 @@ namespace Persistencia
             }
         }
 
-        public Ciudad BuscarCiudadActiva(string pCodigo, Empleado pUsu)
+        public Ciudad BuscarCiudadActiva(string CodigoCiudad, Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Ciudad unaC = null;
             SqlCommand Comando = new SqlCommand("BuscarCiudadActiva", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
-            Comando.Parameters.AddWithValue("@CodigoC", pCodigo);
+            Comando.Parameters.AddWithValue("@CodigoC", CodigoCiudad);
             try
             {
                 _cnn.Open();
@@ -137,13 +137,13 @@ namespace Persistencia
             }
             return unaC;
         }
-        internal Ciudad BuscarCiudadTodas(string pCodigo, Empleado pUsu)
+        internal Ciudad BuscarCiudadTodas(string CodigoCiudad, Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Ciudad unaC = null;
             SqlCommand Comando = new SqlCommand("BuscarCiudad", _cnn);
             Comando.CommandType = CommandType.StoredProcedure;
-            Comando.Parameters.AddWithValue("@CodigoC", pCodigo);
+            Comando.Parameters.AddWithValue("@CodigoC", CodigoCiudad);
             try
             {
                 _cnn.Open();

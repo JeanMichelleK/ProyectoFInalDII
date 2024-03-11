@@ -12,7 +12,7 @@ namespace Persistencia
         void Alta(Aeropuerto unA, Empleado pUsu);
         void Modificar(Aeropuerto unA, Empleado pUsu);
         void Baja(Aeropuerto unA, Empleado pUsu);
-        Aeropuerto BuscarAeropuertoActivo(string pCodigo, Empleado pUsu);
+        Aeropuerto BuscarAeropuertoActivo(string codigoA, Empleado pUsu);
         List<Aeropuerto> ListadoAeropuertos(Empleado pUsu);
     }
 }

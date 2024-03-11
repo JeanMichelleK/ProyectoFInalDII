@@ -122,11 +122,12 @@ namespace Persistencia
             }
         }
 
-        public Aeropuerto BuscarAeropuertoActivo(string pCodigo, Empleado pUsu)
+        public Aeropuerto BuscarAeropuertoActivo(string codigoA, Empleado pUsu)
         {
             SqlConnection _cnn = new SqlConnection(Conexion.Cnn(pUsu));
             Aeropuerto unA = null;
             SqlCommand Comando = new SqlCommand("BuscarAeropuertoActivo", _cnn);
+            Comando.Parameters.AddWithValue("@CodigoA", codigoA);
             Comando.CommandType = CommandType.StoredProcedure;
             try
             {

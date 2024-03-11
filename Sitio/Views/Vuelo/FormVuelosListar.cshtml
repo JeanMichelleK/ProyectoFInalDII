@@ -1,0 +1,86 @@
+﻿@model IEnumerable<EC.Vuelo>
+
+@{
+    ViewBag.Title = "FormVuelosListar";
+}
+
+<h2>Listado Vuelos</h2>
+
+<p>
+    @Html.ActionLink("Nueva", "FormVuelosListar")
+    @Html.ActionLink("Volver", "PaginaMenu", "Home")
+</p>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Fecha: @Html.TextBox("vuelosfechaEspec", "")</td>
+            <td><input type="submit" value="Filtrar" class="btn btn-default" /></td>
+            <td> Seleccione si el vuelo partió o no: @Html.DropDownList("vuelosPartieron", new List<SelectListItem>
+{
+    new SelectListItem { Text = "Partió", Value = "Partio" },
+    new SelectListItem { Text = "No partió", Value = "No Partio" }
+}, "Seleccione una opción")
+            </td>
+        <td>Aeropuerto del vuelo deseado: @Html.DropDownList("AeropuertoFiltro", (SelectList)ViewBag.ListaA)</td>
+            <td><input type="submit" value="Filtrar" class="btn btn-default" /></td>
+            <td>@Html.ActionLink("Limpiar", "FormVuelosListar", null, new { @class = "btn btn-default" })</td>
+        </tr>
+    </table>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoVuelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraSalida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraLlegada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadAsientos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AeropuertoLlegada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AeropuertoPartida)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (EC.Vuelo item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoVuelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaHoraSalida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaHoraLlegada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantidadAsientos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AeropuertoLlegada.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AeropuertoPartida.Nombre)
+        </td>
+    </tr>
+}
+
+</table>
