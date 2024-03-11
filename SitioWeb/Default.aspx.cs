@@ -69,8 +69,14 @@ public partial class _Default : System.Web.UI.Page
                 lblError.Text = "Seleccione un Aeropuerto.";
                 return;
             }
+            if (!(txtFechaD.Text.Trim().Length == 0 || txtFechaH.Text.Trim().Length == 0))
+            {
+                ListaV = (from unV in ListaV
+                          where unV.FechaYHoraSalida.Date >= Convert.ToDateTime(txtFechaD.Text) && unV.FechaYHoraLlegada.Date <= Convert.ToDateTime(txtFechaH.Text)
+                          select unV).ToList();
+            }
             List<object> ListaVP = (from unV in ListaV
-                                    orderby unV.FechaYHoraSalida                               
+                                    orderby unV.FechaYHoraSalida
                                     where unV.Aeropuerto1.Nombre == ddlAeropuerto.SelectedValue && unV.FechaYHoraSalida > DateTime.Now
                                     select new
                                     {
@@ -78,10 +84,11 @@ public partial class _Default : System.Web.UI.Page
                                         Destino = unV.Aeropuerto.Nombre,
                                         Ciudad = unV.Aeropuerto.Ciudad.Nombre,
                                         Pais = unV.Aeropuerto.Ciudad.Pais,
-                                        PasajesVendidos = "?"
+                                        PasajesVendidos = unV.Venta.Sum(venta => venta.Pasaje.Count())
                                    }).ToList<object>();
             if (ListaVP.Count == 0)
                 lblError2.Text = "No hay vuelos que partan de el Aeropuerto seleccionado.";
+            Session["ListaVP"] = ListaVP;
             gvPartidas.DataSource = ListaVP;
             gvPartidas.DataBind();
 
@@ -94,10 +101,11 @@ public partial class _Default : System.Web.UI.Page
                                         Partida = unV.Aeropuerto1.Nombre,
                                         Ciudad = unV.Aeropuerto1.Ciudad.Nombre,
                                         Pais = unV.Aeropuerto1.Ciudad.Pais,
-                                        PasajesVendidos = "?"
+                                        PasajesVendidos = unV.Venta.Sum(venta => venta.Pasaje.Count())
                                     }).ToList<object>();
             if (ListaVA.Count == 0)
                 lblError3.Text = "No hay vuelos que arriben en el Aeropuerto seleccionado.";
+            Session["ListaVA"] = ListaVA; 
             gvArribos.DataSource = ListaVA;
             gvArribos.DataBind();
         }

@@ -51,6 +51,14 @@
         &nbsp;&nbsp;
         <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
         <br />
+        <br />
+        Desde&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtFechaD" runat="server" TextMode="Date"></asp:TextBox>
+&nbsp;&nbsp; hasta&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtFechaH" runat="server" TextMode="Date"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnFiltro" runat="server" Text="Filtrar" />
+        <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
         <br />
