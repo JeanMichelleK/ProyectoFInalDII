@@ -33,7 +33,6 @@ C:\Users\pitum\ProyectoFInalDII\EC\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\pitum\ProyectoFInalDII\EC\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\pitum\ProyectoFInalDII\EC\obj\Debug\EC.dll
 C:\Users\pitum\ProyectoFInalDII\EC\obj\Debug\EC.pdb
-C:\Users\pitum\ProyectoFInalDII\EC\obj\Debug\EC.csprojResolveAssemblyReference.cache
 C:\Users\PCStore\Repositorio\ProyectoFInalDII\EC\bin\Debug\EC.dll
 C:\Users\PCStore\Repositorio\ProyectoFInalDII\EC\bin\Debug\EC.pdb
 C:\Users\PCStore\Repositorio\ProyectoFInalDII\EC\bin\Debug\Microsoft.Web.Infrastructure.dll
